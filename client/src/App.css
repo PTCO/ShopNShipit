@@ -1,0 +1,419 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+/* Logo */
+#SNSLogo{
+  width: 3.5rem;
+}
+
+/* Headings */
+h1{
+  font-size: 1.25rem;
+}
+
+/* Main, Footer, Header */
+footer{
+  min-height: 4rem;
+}
+
+/* Text */
+p{
+  margin-bottom: 0;
+  font-size: .85rem;
+}
+
+/* Lists */
+ul, ol {
+  list-style: none;
+  padding: 0;
+  margin:  0;
+}
+
+/* FORMS */
+legend{
+  font-size: 1.5rem;
+}
+label {
+  font-size: 1rem;
+}
+form label:first-of-type{
+  margin-top: .15rem;
+}
+input, textarea{
+  font-size: .85rem !important;
+}
+
+input{
+  padding: .25rem .75rem !important;
+}
+
+textarea{
+  height: 4.25rem !important;
+  resize: none;
+}
+
+input:hover, textarea:hover, select:hover{
+  box-shadow: none !important;
+  outline: hidden !important;
+  border-color: #4d5c46 !important;
+}
+
+.searchField{
+  padding: .35rem !important;
+}
+
+i:has(~.rating), .rating{
+  color: #bd7c71 !important;
+}
+
+#DeliveryOption > div > i{
+  font-size: 1.75rem !important;
+}
+
+.filterButton{
+  padding: .25rem .5rem !important;
+}
+
+.product{
+  height: 5.5rem;
+}
+
+.notification {
+  width: 65% !important;
+}
+
+.productImg {
+  width: 4rem !important;
+  height: 4rem !important;
+}
+
+.strengthMsg{
+  color: white !important;
+  background: #4d5c46;
+  padding-top: .35rem !important;
+}
+
+.results{
+  overflow-y: auto;
+  max-height: 24rem;
+}
+
+.productPrice {
+  font-size:  1rem !important;
+}
+
+header button {
+  font-size: .85rem !important;
+}
+
+.infoReviewsRows {
+  display: none !important;
+}
+
+.searchProduct {
+  width: 100% !important;
+}
+
+.home  button, .notification button {
+  font-size: .85rem !important;
+}
+
+.productDescription{
+  max-height: calc(100vh - 35.35rem) !important;
+  margin-bottom: .15rem !important;
+}
+.reviewsList {
+  max-height: calc(100vh - 21.5rem) !important;
+}
+.reviewsList > div {
+  margin-right: 0 !important;
+}
+
+.review {
+  width: 100% !important;
+}
+.review p {
+  font-size: 1rem !important;
+}
+
+.reviewPortrait{
+  width: 3rem;
+}
+
+.reviewProductPortrait{
+  width: 5rem !important;
+}
+
+.orderProductPortrait {
+  width: 5rem !important;
+}
+
+.order h6 {
+  font-family: "copal-std-outline";
+}
+
+.footerBtn {
+  margin-bottom: 1rem !important;
+}
+
+.orderTitle {
+  font-size: 0.85rem;
+  max-width: 15rem !important;
+  overflow-y: hidden;
+}
+
+.orderPortrait {
+  width: 8rem !important;
+}
+
+.productDetailPortrait{
+  width: 46% !important;
+  height: 100% !important;
+}
+.review .fa-tag {
+  font-size: 1.25rem !important;
+}
+.reviewProductDetails > span:first-of-type > h6 {
+  height: 3.45rem;
+  overflow: auto !important;
+}
+
+.addedCartItemPortrait{
+  width: 90%;
+  margin:  0 auto;
+  height: 7rem;
+}
+
+.orderUpdatePortrait{
+  width: fit-content;
+  height: 5rem !important;
+}
+
+.itemControl h6, .itemControl input {
+  font-size: .75rem !important;
+}
+.itemControl input {
+  padding: .18rem !important;
+  text-align: center;
+  font-weight: bold;
+}
+.itemControl button {
+  padding: .15rem !important;
+  font-size: .85rem !important;
+}
+.itemControl > span:first-of-type {
+  width: 35%;
+}
+.aboutNav + div {
+  max-height: 55% !important;
+}
+
+#shippingOptions {
+  height: calc(100vh - 22rem);
+    overflow-x: hidden;
+}
+
+.cart {
+  height: calc(100vh - 13rem);
+}
+
+.settingsTitle {
+  font-family: "copal-std-outline", sans-serif;
+}
+
+.settingsOption {
+  height: calc(100vh - 12rem);
+}
+
+.outOfStockTitle {
+  height: 100% !important;
+}
+
+.about p, .review h6 {
+  font-size: .95rem !important;
+}
+.stockMessage{
+  width: 3rem !important;
+  font-size: .85rem !important;
+}
+.review p {
+  margin-bottom: 0 !important;
+}
+
+.orderProduct{
+  min-height: 5rem !important;
+}
+.orderProduct button {
+  font-size: .95rem !important;
+}
+.orderProduct h6{
+  font-size: .85rem !important;
+}
+.orderItemsList {
+  height: calc(100vh - 27rem);
+  }
+  
+  .paymentList, .addressList {
+      height: calc(100vh - 23rem);
+  }
+
+  .itemControl h5 {
+    font-size: 1.15rem !important;
+  }
+
+  .itemSummary {
+  height: 100%;
+  overflow-y: auto;
+  }
+
+  .searchField + button {
+    border-color: #4d5c46 !important;
+  }
+
+  .changePortraitImage{
+  width: 3.5rem !important;
+  }
+
+  .checkoutPayment, .checkoutDelivery{
+  height: calc(100vh - 22rem);
+  }
+
+  .checkoutPaymentList{
+  height: calc(100vh - 24.5rem);
+  overflow-x: hidden;
+  }
+
+  .checkoutSummary{
+  height: calc(100vh - 21.75rem);
+  }
+  .checkoutItem{
+  height: 4.5rem;
+  }
+  .checkoutItemImg{
+  height: 3.5rem;
+  width: 4rem;
+  }
+  .productDetailPortraitSelect {
+    height: 2rem !important;
+  }
+  .orderProduct h6 {
+    word-break: break-all;
+  }
+
+  .review small {
+    font-family: sans-serif !important;
+  }
+
+  .review small {
+    font-size: .85rem !important;
+  }
+
+  .orderBreakdown button{
+    font-size: .75rem !important;
+  }
+   
+
+  .fullFooter{
+  height: 0vh;
+  animation-name: slide;
+  animation-duration: .5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+  overflow: hidden;
+  }
+
+  .review img {
+    margin-bottom: auto !important;
+  }
+
+  #productTitle{
+    text-wrap: wrap;
+    word-break: break-all;
+    max-height: 2rem;
+    overflow: auto;
+    font-size: .8em;
+    margin-bottom: .25rem;
+  }
+
+  .carouselImage{
+  width: 100%;
+  height: 100% !important;
+  grid-row: 1/2;
+  grid-column: 1/2;
+  }
+
+  #stockMessage{
+    font-size: .7rem !important;
+  }
+
+  #productDetailsImages{
+    margin-top: .5rem !important;
+    max-height: 8rem;
+  }
+
+  .col-8 {
+    flex: none !important;
+    width: auto !important;
+  }
+
+  .aboutHelp, .aboutContainer h2, .desktopProductReviews, .desktopReviewProductPortrait, .copyrightAbout, #tabletView-productDescription, .reviewText, .desktopImageSelection, .desktopFormButton, #checkoutDesktop {
+    display: none !important;
+  }
+  .mobileImageSelection {
+    height: 100% !important;
+    margin: 0 .5rem !important;
+    overflow-y: scroll;
+  }
+  .mobileImageSelection > div {
+    margin: .15rem 0;
+  }
+  
+  .imageCarouselContainer{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 100%;
+    height: 80%;
+
+    }
+    
+  .aboutPortrait{
+  width: 4rem !important;
+  height: 4rem !important;
+  }
+
+  @keyframes slide {
+    from {
+    height: 0vh;
+    }
+    to {
+      height: 81.5vh;
+    }
+  }

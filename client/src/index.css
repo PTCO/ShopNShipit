@@ -1,0 +1,68 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-y: hidden !important;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+h1, h2, h3, h4, h5, h6, legend{
+  margin: 0;
+  font-family: "copal-std-solid", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+#portal{
+  position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#overlay {
+  background: lightgray;
+  opacity: .6;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+}
+
+.fa-bounce {
+  animation-iteration-count: 1 !important;
+  animation-duration: .5s !important;
+}
+
+legend {
+  font-family: "copal-std-outline", sans-serif;
+}
+
+label, p{
+  font-family: darker-grotesque, sans-serif;
+  color: #bd7c71 !important
+}
+
+.border-bottom, .border-top, .border, input, textarea, select{
+  border-color: #4d5c46 !important;
+}
+
+header button {
+  background: #4d5c46 !important;
+  border-color: #4d5c46 !important;
+}
+
+button[type="submit"]{
+  background: #bd7c71 !important;
+  border-color: #bd7c71 !important;
+}

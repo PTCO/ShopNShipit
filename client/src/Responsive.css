@@ -1,0 +1,920 @@
+/* Phone Medium - Large */
+@media (min-width: 390px) and (max-height: 1024px) {
+    /* Shared */
+    .notification > h6 {
+        margin-top: .5rem !important;
+    }
+    
+    /* Text */
+    .home p, label, .productPrice, .stockMessage {
+        font-size: 1.25rem !important;
+    }
+    .itemControl h6 {
+        font-size: .95rem !important;
+    }
+    .orderTitle, #stockMessage {
+        font-size: 1.15rem !important;
+    }
+    #stockMessage{
+        max-width: 8rem !important;
+    }
+    #productTitle {
+        max-height: 4.5rem;
+        font-size: 1.25em;
+    }
+    #orderDetails h5 {
+        margin:  .5rem 0 0 0 !important;
+    }
+
+    /* Form */
+    .itemControl input {
+        font-size: .95rem !important;
+    }
+    .searchField {
+        font-size: 1rem !important;
+    }
+
+    /* Icons */
+    .fa-tag{
+        font-size: 1.5rem !important;
+    }
+
+    /* Buttons */
+    .footerBtn {
+        margin-bottom: 1.25rem !important;
+    }
+    .itemControl button {
+        padding: .35rem !important;
+    }
+    .home button, header button, .notification button {
+        font-size: 1rem !important;
+    }
+
+    /* Images */
+    .orderPortrait {
+        margin-right: .75rem !important;
+    }
+    .checkoutItemImg {
+        width: 5rem !important;
+        height: 4.25rem !important;
+    }
+    .productDetailPortrait {
+        width: 16rem !important;
+    }
+    .reviewProductPortrait {
+        width: 6.5rem !important;
+    }
+    .reviewPortrait {
+        width: 4rem !important;
+    }
+    .addedCartItemPortrait {
+        height: 8rem !important;
+    }
+    .productDetailPortraitSelect {
+        height: 3rem !important;
+    }
+
+    /* Containers */
+    .settings li {
+        padding: .75rem !important;
+    }
+    .notification {
+        width: 65% !important;
+    }
+    .cart .product, .checkoutItem, .productDescription {
+        margin-bottom: .5rem !important;
+    }
+    .reviewProductDetails {
+        margin-top: 1rem !important;
+    }
+    .formButtonContainer {
+        margin-top: .75rem !important;
+    }
+    .paymentList,
+    .addressList,
+    .checkoutSummary {
+        height: calc(100vh - 24rem) !important;
+        padding-top: .25rem !important;
+    }
+    .checkoutSummary {
+        height: calc(100vh - 22rem) !important;
+    }
+    .checkoutItem {
+        height: 5.5rem !important;
+    }
+    .productDescription  {
+        height: calc(100vh - 43rem) !important;
+    }
+    #productDetailsImages {
+        margin-top: .5rem !important;
+        max-height: 11rem;
+    }
+    .checkoutPaymentList{
+        height: calc(100vh - 25.5rem);
+    }
+    .checkoutPayment,
+    .checkoutDelivery {
+        height: calc(100vh - 23rem);
+    }
+    #DeliveryOption{
+        min-height: 5.75rem !important;
+    }
+    .orderItemsList {
+        height: calc(100vh - 30.5rem);
+    }
+    #orderDetails{
+        margin:  0 0 .75rem 0 !important;
+    }
+    .settingsOption {
+        height: calc(100vh - 13rem);
+    }
+
+}
+
+/* Tablets*/
+@media (min-width: 756px) and (min-height: 900px) {
+    
+    /* Shared */
+    .settings .fs-6,
+    .notification h6 {
+        font-size: 1.25rem !important;
+    }
+
+    
+    /* Text */
+    .home h5, .home h6, label, .cart h4, .filters h4,
+    .notification h5, .cart b, .changePortraitImage + b, #productDetailsPrice{
+        font-size: 1.15rem !important;
+    }
+    .settings li, .cart h6, .orderProduct h6, .paymentOption li,
+    .checkoutDelivery>div li,
+    .checkoutPayment>div li {
+        font-size: 1.35rem !important;
+    }
+    .notification h6 {
+        margin-top: .45rem !important;
+    }
+    header h1 {
+        font-size: 1.85rem !important;
+    }
+    #productTitle {
+        font-size: 1.5rem !important;
+        max-height: 5.5rem !important;
+    }
+    
+    /* Form */
+    form input, .filters input, textarea, select {
+        font-size: 1.45rem !important;
+    }
+    .searchField {
+        font-size: 1.25rem !important;
+    }
+    form {
+        max-width: 60% !important;
+    }
+    
+    /* Buttons */
+    .home button, .notification button, header button {
+        font-size: 1.25rem !important;
+    }
+    .filterButton {
+        padding: .95rem .35rem;
+    }
+    form button {
+        font-size: 1.35rem !important;
+    }
+    
+    /* Icons */
+    .settings li  > i{
+        font-size: 2.25rem !important;
+    }
+    .notification h5 > i {
+        font-size: 1.65rem !important;
+    }
+    .fa-filter {
+        padding: .95rem .35rem !important;
+    }
+    .filters .fa-tag {
+        font-size: 2.25rem !important;
+    }
+    
+    /* Images  */
+    .order img {
+        width: 10rem !important;
+        margin-right: 1rem !important;
+    }
+    .changePortraitImage, .reviewPortrait, header img {
+        width: 4.5rem !important;
+    }
+    .aboutPortrait{
+        width: 6rem !important;
+        height: 6rem !important;
+    }
+    .productImg {
+        width: 7.5rem !important;
+        height: 100% !important;
+    }
+    .reviewProductPortrait {
+        width: 6rem !important;
+        height: 5rem !important;
+    }
+    .checkoutItemImg {
+        height: 6.5rem;
+        width: 8rem;
+    }
+    .addedCartItemPortrait {
+        width: 90%;
+        margin: 1rem auto !important;
+        height: 12rem;
+    }
+    .productDetailPortrait {
+        width: 65% !important;
+        height: 50% !important;
+    }
+    
+    /* Containers  */
+    .home {
+        width: 85% !important;
+        margin: 0 auto;
+    }
+    .formButtonContainer, .pwdStrength, #productNav {
+        margin-top: .75rem !important;
+    }
+    .productDescription {
+        max-height: calc(100vh - 51rem) !important;
+        margin: .25rem 0 !important;
+    }
+    .infoReviewsRows {
+        display: flex !important;
+        align-items: start !important;
+        max-height: 18rem !important;
+        overflow-y: auto;
+    }
+    .product, .checkoutItem{
+            height: 8rem !important;
+        }
+    .product {
+        padding: .75em !important;
+        margin-top: .5rem !important;
+    }
+    .imageCarouselContainer{
+        padding-top: 1rem !important;
+        grid-template-columns: 85%;
+        justify-content: center;
+        height: 85%;
+    }
+    .settings li, .paymentOption li, .checkoutDelivery> div li,
+    .checkoutPayment>div li, #DeliveryOption{
+        padding: 1rem !important;
+    }
+    .order, .review {
+        padding: .5rem !important;
+    }
+    .review {
+        margin-bottom: .5rem !important;
+    }
+    .results {
+        max-height: 41rem !important;
+    }
+    .paymentList,
+    .addressList,  .checkoutSummary {
+        height: calc(100vh - 30rem) !important;
+        padding-top: .75rem !important;
+    }
+    .checkout, .checkoutPaymentList, .paymentCheckoutList {
+        height: calc(100vh - 32.5rem) !important;
+    }
+    .checkoutPayment,
+    .checkoutDelivery {
+        height: calc(100vh - 28rem);
+    }
+    .reviewsList {
+        max-height: calc(100vh - 30.5rem) !important;
+    }
+    .orderItemsList {
+        max-height: calc(100vh - 34.5rem) !important;
+    }
+    .settingsOption, .cart{
+        height: calc(100vh - 17rem) !important;
+    }
+    .footerBtn{
+        margin-bottom: 2rem !important;
+    }
+    .searchNav {
+        margin-bottom: 1rem !important;
+    }
+    .notification {
+        width: 43% !important;
+    }
+    header, .checkoutItem {
+        margin-bottom: 1rem !important;
+    }
+    .aboutNav {
+        margin-top: 3rem !important;
+    }
+    #productDescription, .infoReviewsCarousel{
+        display: none !important;
+    }
+    #productDetailsImages, .reviewsList {
+        display: grid !important;
+        grid-template-columns: 50% 50%;
+    }
+    .reviewsList>div {
+        width: 98% !important;
+        margin: .25rem auto !important;
+    }
+    .infoReviewsRows>div {
+        width: 48% !important;
+        margin: 0 auto !important;
+    }
+    #tabletView-productDescription, .reviewText {
+        display: block !important;
+    }
+    .ratingsContainer{
+        margin-bottom: .5rem !important;
+    }
+    #productDetailsImages {
+        max-height: 100% !important;
+    }
+    #productDetailImageContainer{
+        max-height: 18rem !important;
+    }
+
+    /* Animation */
+    @keyframes slide {
+        0% {
+            height: 0vh;
+        }
+        100% {
+            height: 80vh;
+        }
+    }
+}
+
+/* Tablets - Tall  */
+@media (min-width: 820px) and (min-height: 1180px) {
+    
+}
+
+/* Surface Duo */
+@media (min-width: 539px) and (max-height: 721px) {
+    /* Shared */
+    .home button, .review p, .searchField{
+        font-size: .85rem !important;
+    }
+
+    /* Text */
+    .productPrice, #productHighlight{
+        font-size:  1rem !important;
+    }
+    .productDescription {
+        height: calc(100vh - 38rem) !important;
+    }
+
+    /* Button */
+    .searchField + button {
+        padding: .35rem !important;
+    }
+
+    /* Images */
+    .productDetailPortrait {
+        width: 11rem !important;
+    }
+
+    /* Container */
+    .desktopReviewsContainer{
+     margin-top: .25rem !important;   
+    }
+    .reviewsList {
+        padding-top: .25rem !important;
+    }
+    .notification{
+        width: 45% !important;
+    }
+    .productDetailImageContainer{
+        margin:  0 auto !important;
+    }
+    .home {
+        width: 80% !important;
+        margin:  0 auto !important;
+    }
+    .reviewsList {
+        max-height: calc(100vh - 24.5rem) !important;
+    }
+    .results {
+        max-height: calc(100vh - 15.5rem) !important;
+    }
+    .checkoutSummary {
+        height: calc(100vh - 19.75rem) !important;
+    }
+    .orderItemsList {
+        height: calc(100vh - 25rem) !important;
+    }
+}
+
+/* Tablets Large &  Laptops */
+@media (min-width: 800px) and (max-width: 1279px) and (max-height: 1368px) {
+
+    /* Text */
+    .mobileProductReviews .review b, .mobileProductReviews .review h6, #stockMessage {
+        font-size: 1.25rem !important;
+    }
+    .reviewProductDetails>span:first-of-type>h6 {
+        height: 4.45rem !important;
+    }
+    #productDetailsPrice {
+        font-size: 1.75rem !important;
+    }
+    .copyright{
+        margin-bottom: 10rem !important;
+    }
+    #productTitle {
+        max-height: 8rem !important;
+    }
+    .productDescription {
+        font-size: 1.5rem !important;
+        height: calc(100vh - 55rem) !important;
+    }
+    
+    /* Form */
+    form{
+        max-width: 50% !important;
+    }
+    legend{
+        font: 2.25rem !important;
+    }
+    label{
+        font-size: 1.5rem !important;
+    }
+    .itemControl input {
+        width: 3rem !important;
+        font-size: 1.15rem !important;
+    }
+
+    /* Images */
+    .reviewProductPortrait {
+        width: 9rem !important;
+        height: 7rem !important;
+    }
+
+    /* Containers */
+    .results, .orders {
+        display: grid !important;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: auto;
+    }
+    .orders{
+        grid-template-rows: 33.3% 33.3% 33.3% !important;
+    }
+    .searchProduct, .order {
+        margin: 0 auto !important;
+        max-width: 95% !important;
+    }
+    .order{
+        width: 100% !important;
+    }
+    .imageCarouselContainer{
+        grid-template-columns: 70% !important;
+        grid-template-rows: 100% !important;
+        height: 60% !important;
+        justify-content: center;
+    }
+    .aboutNav {
+        margin-top: 1rem !important;
+    }
+    .about, .help{
+        height: 54rem !important;
+    }
+    .aboutNav + div {
+        max-height: 76% !important;
+    }
+    .reviewsList {
+        max-height: calc(100vh - 30.5rem) !important;
+    }
+    .order {
+        height: 18rem !important;
+    }
+    .formButtonContainer, .pwdStrength {
+        margin-top: .75rem !important;
+    }
+    .itemControl span {
+        width: 9.5rem !important;
+    }
+    .itemsContainer {
+        display: grid !important;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: auto;
+    }
+    .about{
+        height: 40rem !important;
+    }
+    .cartItem {
+        margin: 0 .5rem !important;
+    }
+    .infoReviewsRows {
+        max-height: 25rem !important;
+    }
+
+    /* Animation */
+    @keyframes slide {
+        0% {
+            height: 0vh;
+        }
+
+        100% {
+            height: 90vh;
+        }
+    }
+}
+
+
+@media (min-width: 820px) and (max-height: 1181px) {
+    .cartItem > div {
+        padding: .5rem !important;
+        margin: .5rem 0 !important;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1280px) and (min-height: 1079px) {
+    
+    /* Shared */
+    .aboutNav, .mobileProductReviews, .reviewProductPortrait, .infoReviewsCarousel, #tabletView-productDescription, .checkout, .mobileCheckoutBtn, .mobileFormButton, .addPaymentOptionBtn, .addShippingAddressBtn, .mobileCheckoutBtn{
+        display: none !important;
+    }
+    .aboutHelp, .desktopProductReviews, .desktopReviewProductPortrait, #productDetailsImages ,#productDescription, .desktopFormButton, #checkoutDesktop{
+        display: block !important;
+    }
+    .searchField + button, header button, .pwdStrength p, .pwdStrength h6, .oauthContainer h5 {
+        font-size: 1.5rem !important;
+    }
+
+    /* Text */
+    .contactTitle{
+        width: 25% !important;
+        margin:  0 auto !important;
+        margin-bottom: 1rem !important;
+    }
+    .checkOutNavSelected, .checkOutNavSelected b:last-of-type{
+        font-weight: bold !important;
+        background: #4d5c46 !important;
+        border-color: #4d5c46 !important;
+    }
+    .checkOutNavSelected, .checkOutNavSelected:hover {
+        color: white;
+    }
+    .aboutContainer h2 {
+        display: block !important;
+    }
+    .review p {
+        display: inline-block;
+        width: 35rem !important;
+        overflow: hidden;
+    }
+    .reviewText {
+        display: inline-block;
+        width: 23rem !important;
+        text-wrap:nowrap !important;
+    }
+    .product > div > p:first-of-type,
+    #productDetailsPrice {
+        font-size: 1.7rem !important;
+    }
+    #stockMessage, .productDescription, .review p, .ratingsContainer h6, .desktopProductReviews
+     span h6, .footerBtn p {
+        font-size: 1.5rem !important;
+    }
+    .footerBtn p {
+        cursor: pointer;
+    }
+    .checkoutNavOption b:first-of-type {
+        font-family: "copal-std-solid", sans-serif;
+    }
+
+    /* Images */
+    .productDetailPortrait, .productDetailPortraitSelect{
+        width: 100% !important;
+    }
+    .desktopReviewProductPortrait {
+        margin: .95rem 1rem 0 0 !important;
+    }
+    .orderProductPortrait {
+        width: 6rem !important;
+    }
+
+    /* Icons */
+    .fa-tag, .oauthContainer i{
+        font-size: 2.25rem !important;
+    }
+
+    /* Buttons */
+    .filterButton {
+        padding: .5rem !important;
+    }
+    .productCartBtn, .createReviewBtn {
+        margin-left: .5rem !important;
+    }
+    form button {
+        max-width: 25% !important;
+        font-size: 1.5rem !important;
+    }
+    
+    /* Form */
+    .searchField {
+        font-size: 1.5rem !important;
+    }
+    legend {
+        font-size: 2rem !important;
+    }
+    label, input{
+        font-size: 1.85rem !important;
+    }
+    form {
+        max-width: 35% !important;
+        margin: 0 auto 1rem auto !important;
+    }
+    .itemControl input {
+        width: 5rem !important;
+        font-size: 1.1rem !important;
+    }
+    
+    /* Containers */
+    .col-8 {
+        flex:  0 0 auto;
+        width: 66.66666667% !important;
+    }
+    .reviewsList>div {
+        margin-right: .5rem !important;
+    }
+    .desktopImageSelection > div {
+        flex: .33 !important;
+        margin: .25rem !important;
+    }
+    .cartItem{
+        width: calc(50% - .5rem) !important;
+        margin: .2rem .25rem !important;
+    }
+    .paymentOption, .checkoutItem, .order, .orderProduct {
+        margin: .5rem !important;
+    }
+    #productImagesCarousel {
+        margin-right: 1rem !important;
+    }
+    #productImagesCarousel > span, .ratingsContainer, .cartItem {
+        margin-bottom: 1rem !important;
+    }
+    .itemsContainer{
+        display: flex !important;
+    }
+    #shippingOptions {
+    height: calc(100vh - 28rem);
+    }
+    .productDetails, .infoReviewsRows {
+        display: grid !important;
+        grid-template-columns: 25% 35% 40% !important;
+    }
+    .infoReviewsRows{
+        grid-template-columns: 50% 50% !important;
+        overflow-x: hidden;
+    }
+    .info, #productImagesCarousel {
+        width: 100% !important;
+    }
+    .infoReviewsRows>div {
+        width: 98% !important;
+    }
+    .desktopProductReviews{
+        grid-column: 3/4 !important;
+    }
+    .aboutContainer, .aboutHelp, .filterPrice span {
+        margin-top: 1rem !important;
+    }
+    .reviewsList, .itemsContainer{
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        max-height: calc(100vh - 35.5rem) !important;
+        align-items: start !important;
+    }
+    .infoReviewsRows {
+        max-height: 57rem !important;
+    }
+    .itemsContainer, .addressList ,.paymentList {
+        max-height: calc(100vh - 30rem) !important;
+    }
+    .reviewsList {
+        overflow-x: hidden;
+    }
+    .info, .desktopProductReviews{
+        margin-top: 4.25rem !important;
+    }
+    .info {
+        padding: 0 1rem !important;
+    }
+    .help + div {
+        max-height: 41rem !important;
+    }
+    .aboutContainer {
+        width: 75% !important;
+    }
+    .checkoutSummary {
+        height: calc(100vh - 27.5rem) !important;
+    }
+    .results, .orders, .checkoutPaymentList, .itemSummary, .itemsContainer, .addressList, .paymentList, .orderItemsList, #shippingOptions {
+        display: grid !important;
+        grid-template-columns: 33.3% 33.3% 33.3% !important;
+        grid-template-rows: auto;
+    }
+    .addressList, .paymentList{
+        grid-template-rows: 26% !important;
+    }
+    #shippingOptions {
+        grid-template-rows: 18% !important;
+    }
+    .addressList, .paymentList{
+        grid-template-columns: 50% 50% !important;
+    }
+    .itemSummary{
+        grid-template-rows: 34% !important;
+    }
+    .orders{
+        grid-template-rows: 45% !important;
+    }
+    .aboutHelp {
+        max-height: 80% !important;
+    }
+    .searchProduct, .order {
+        padding: 0 .25rem !important;
+    }
+    .orderProduct, .order{
+        padding: .5rem  .5rem !important;
+    }
+    .orderProduct{
+        height: 8rem !important;
+    }
+    .order {
+        height: 18rem !important;
+    }
+    .notification {
+        width: 20% !important;
+    }
+    .itemControl>span:first-of-type {
+        width: 44%;
+    }
+    .cartItem {
+        width: 97% !important;
+        margin: 0 .25rem !important;
+    }
+    .mobileCheckoutBtnContainer {
+        border: none !important;
+    }
+    .col-4 > form {
+        max-width: 90% !important;
+    }
+
+
+}
+
+/* Nest Hub */
+@media (width: 1024px) and (height: 600px) {
+    /* Shared */
+    .mobileProductReviews,
+    .reviewProductPortrait, .infoReviewsRows {
+        display: none !important;
+    }    
+
+    /* Text */
+    .home p, .settings b, .itemControl h6, .itemControl button {
+        font-size: 1rem !important;
+    }
+    .orderProduct p, .orderProduct button, .orderProduct h6, .orderBreakdown b, .orderBreakdown p {
+        font-size: .75rem !important;
+    }
+    .copyrightAbout {
+        display: block !important;
+    }
+    .settings h2 {
+        font-size: 1.5rem !important;
+    }
+    .productDescription {
+        max-height: calc(103vh - 23.35rem) !important;
+    }
+    .itemControl h5 {
+        font-size: .95rem !important;
+    }
+    #orderDetails h5 {
+        margin:  .25rem 0 0 0 !important;
+    }
+
+    /* Button */
+    .itemControl button {
+        padding: .15rem !important;
+    }
+
+    /* Form  */
+    .itemControl input {
+        font-size: .95rem !important;
+    }
+
+    /* Images */
+    .productDetailPortrait{
+        width: 70% !important;
+        height: 9rem !important;
+    }
+    .desktopReviewProductPortrait{
+        width: 30% !important;
+        height: 6rem !important;
+        margin-top: .75rem !important;
+    }
+    .orderProductPortrait {
+        width: 3.75rem !important;
+        height: 70%;
+    }
+
+
+    /* Container */
+    .home {
+        width: 70% !important;
+    }
+    .fullFooter {
+        padding-top: 0 !important;
+    }
+    .order {
+        height: 15rem !important;
+        margin-bottom: 1rem !important;
+    }
+    .notification {
+        width: 25% !important;
+        min-height: 65%;
+    }
+    form {
+        margin:  0 auto !important;
+    }
+    .itemsContainer, .reviewsList, .itemSummary, .orderItemsList {
+        display: grid !important;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: auto;
+    }
+    .orderItemsList {
+        grid-template-columns: 33.3% 33.3% 33.3%;
+    }
+    .orders {
+        grid-template-rows: auto !important;
+    }
+    .reviewsList > div{
+        width: 98% !important;
+    }
+    .checkoutItem {
+        margin: .25rem !important;
+    }
+    .review {
+        margin:.35rem !important;
+    }
+    .itemControl {
+        max-width: 50% !important;
+    }
+    .desktopReviewsContainer{
+        height: calc(100vh - 23rem);
+    }
+    .orderItemsList {
+        height: calc(100vh - 26.5rem) !important;
+    }
+    .settings li {
+        padding: 0.45rem !important;
+    }
+    .reviewsList{ 
+        max-height: 100% !important;
+    }
+    .desktopReviewsContainer, .itemControl {
+        margin-top: .5rem !important;
+    }
+    .productDetails, .infoReviewsCarousel, #orderDetails {
+        display: flex !important;
+    }
+    .productDescription{
+        height: 15rem !important;
+    }
+    #orderDetails {
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+    }
+    #orderDetails > div {
+        border: none !important;
+        width: 50% !important;
+    }
+    .orderProduct {
+        min-height: 5rem !important;
+        max-height: 7rem !important;
+        width: 97% !important;
+        margin: .25rem auto !important;
+    }
+    .desktopProductReviews,
+    .desktopReviewProductPortrait {
+        display: block !important;
+    }
+    .desktopProductReviews {
+        width: 33vw !important;
+    }
+    #productImagesCarousel {
+        margin-right: .75rem !important;
+    }
+}
