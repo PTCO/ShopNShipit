@@ -778,7 +778,7 @@
 @media (width: 1024px) and (height: 600px) {
     /* Shared */
     .mobileProductReviews,
-    .reviewProductPortrait, .infoReviewsRows {
+    .reviewProductPortrait, .infoReviewsRows, .checkout, .addPaymentOptionBtn {
         display: none !important;
     }    
 
@@ -789,7 +789,7 @@
     .orderProduct p, .orderProduct button, .orderProduct h6, .orderBreakdown b, .orderBreakdown p {
         font-size: .75rem !important;
     }
-    .copyrightAbout {
+    .copyrightAbout, #checkoutDesktop {
         display: block !important;
     }
     .settings h2 {
@@ -835,6 +835,10 @@
     .home {
         width: 70% !important;
     }
+    .col-8, .col-4 {
+        flex: 0 0 auto;
+        width: 50% !important;
+    }
     .fullFooter {
         padding-top: 0 !important;
     }
@@ -849,10 +853,13 @@
     form {
         margin:  0 auto !important;
     }
-    .itemsContainer, .reviewsList, .itemSummary, .orderItemsList {
+    .itemsContainer, .reviewsList, .itemSummary, .orderItemsList, .checkoutPaymentList {
         display: grid !important;
         grid-template-columns: 50% 50%;
         grid-template-rows: auto;
+    }
+    .checkoutPaymentList {
+        grid-template-columns: 100% !important;
     }
     .orderItemsList {
         grid-template-columns: 33.3% 33.3% 33.3%;
@@ -887,7 +894,7 @@
     .desktopReviewsContainer, .itemControl {
         margin-top: .5rem !important;
     }
-    .productDetails, .infoReviewsCarousel, #orderDetails {
+    .productDetails, .infoReviewsCarousel, #orderDetails, #checkout {
         display: flex !important;
     }
     .productDescription{
