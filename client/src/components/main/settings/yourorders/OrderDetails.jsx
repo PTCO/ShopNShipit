@@ -12,12 +12,20 @@ const OrderDetails = () => {
 
     useEffect(()=>{
         settingsActions.getOneOrder(location.pathname.split("/")[5]);
+        if(order) {
+            setTimeout(() => {
+                settingsActions.updateOrderStatus(order.Order_ID, "Shipped");
+                setTimeout(() => {
+                    settingsActions.updateOrderStatus(order.Order_ID, "Delivered");
+                }, 10000);
+            }, 5000);
+        }
     }, [])
 
     if(order) {
         return (
             <>
-            <h2 className="border-bottom border-2 pb-1 mt-2 mb-1 settingsTitle" >{`Order Details`}</h2>
+            <h2 className="d-flex  align-items-center border-bottom border-2 pb-1 my-2 pb-2 settingsTitle" >Order Details <p className="ms-3 fs-3 rounded p-1 text-white" style={{background: "#4d5c46"}}>{order.Order_ID}</p></h2>
             <div className="mb-2">
                 {items ? 
                 <div className="d-flex flex-column orderItemsList overflow-y-auto">

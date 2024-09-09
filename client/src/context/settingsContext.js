@@ -39,6 +39,7 @@ export const SettingsProvider = (props) => {
         .then( result => {
             setOrderStatus({status: true, order: result.data})
             document.getElementById("portal").className = "null"
+            actions.accountNotifications("Order Update", "Order #", id, user.Email, status, "09/09/2024", '', '', '', '', '', '', order.Delivery.Window)
         })
         .catch(error => actions.handleError(error.response))
     }

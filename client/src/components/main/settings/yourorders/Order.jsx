@@ -6,14 +6,8 @@ const Order = ({id, itemcount, thumbnail, subtotal, shippingprice, tax, cart, st
     const { actions } = useContext(UserContext);
     const { settingsActions  } = useContext(SettingsContext);
 
-    // useEffect(()=>{
-    //     setTimeout(() => {
-    //         settingsActions.updateOrderStatus(id, "Shipped");
-    //     }, 5000);
-    // })
-
     return (
-        <div className="d-flex flex-column border border-2 p-2 mt-1 mb-2 pe-2 rounded order">
+        <div className="d-flex flex-column border border-2 mx-1 p-2 mt-1 mb-2 pe-2 rounded order">
             <span className="d-flex align-items-center">
                 <img src={thumbnail} alt="" className="orderPortrait me-1"/>
                 <div className="d-flex flex-column w-100 h-100">

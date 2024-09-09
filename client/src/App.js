@@ -44,13 +44,14 @@ function App() {
           <Route path='/Signup' element={<Signup />}/>
           <Route path='/Login' element={<Login />}/>
           <Route path='/Signout' element={<Signout />}/>
+          <Route path='Footer' element={<Footer />} />
 
           {/* All Authorized User Content/Routes Go  here */}
           <Route element={<AuthRoute />}>
           {/* Add Routes here.... */}
             <Route path='/Home' element={<Home />}>
-              <Route index element={<Results />} />
               <Route path='Footer' element={<Footer />} />
+              <Route index element={<Results />} />
               <Route path='Filters' element={<Filter />} />
               <Route path='Product' element={<Details />} />
               <Route path='Cart'>

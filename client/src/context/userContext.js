@@ -32,6 +32,30 @@ export const UserProvider = (props) => {
         .catch(error => {handleError(error.response)})
     }
 
+    const accountNotifications = async(type, message, orderid, email,  status, deliverydate, state, city, addressone, addresstwo, zip, deliverydesc, deliverywindow, deliverycost, subtotal, tax, itemcount )=> {
+        await axios.post(`${process.env.REACT_APP_BACKEND_URL}/Email`, 
+        {
+            Notification_Type: type,
+            Notification_Message: message,
+            Order_ID: orderid,
+            Email: email,
+            Status: status,
+            State: state,
+            City: city,
+            AddressOne: addressone,
+            AddressTwo: addresstwo,
+            ZipCode: zip,
+            DeliveryDesc: deliverydesc,
+            DeliveryWindow: deliverywindow,
+            DeliveryDate: deliverydate,
+            SubTotal: subtotal,
+            DeliveryCost: deliverycost,
+            Tax: tax,
+            ItemCount: itemcount
+        })
+        .catch( error => handleError(error.response))
+    }
+
     /* User Signin Method */
     const userSignUp = async (data) => {
         try {
@@ -143,7 +167,8 @@ export const UserProvider = (props) => {
                 selectShippingOption,
                 setUser,
                 setErrorMsg,
-                portraitChange
+                portraitChange,
+                accountNotifications
             }
         }}>
         {props.children}

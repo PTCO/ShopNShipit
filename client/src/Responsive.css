@@ -143,12 +143,10 @@
     
     /* Text */
     .home h5, .home h6, label, .cart h4, .filters h4,
-    .notification h5, .cart b, .changePortraitImage + b, #productDetailsPrice{
+    .notification h5, .cart b, .changePortraitImage + b, #productDetailsPrice , .paymentOption P{
         font-size: 1.15rem !important;
     }
-    .settings li, .cart h6, .orderProduct h6, .paymentOption li,
-    .checkoutDelivery>div li,
-    .checkoutPayment>div li {
+    .settings li, .cart h6, .orderProduct h6{
         font-size: 1.35rem !important;
     }
     .notification h6 {
@@ -219,8 +217,8 @@
         height: 5rem !important;
     }
     .checkoutItemImg {
-        height: 6.5rem;
-        width: 8rem;
+        height: 5.5rem !important;
+        width: 7rem !important;
     }
     .addedCartItemPortrait {
         width: 90%;
@@ -237,6 +235,9 @@
         width: 85% !important;
         margin: 0 auto;
     }
+    #shippingOptions {
+        height: calc(100vh - 26rem);
+    }
     .formButtonContainer, .pwdStrength, #productNav {
         margin-top: .75rem !important;
     }
@@ -251,7 +252,7 @@
         overflow-y: auto;
     }
     .product, .checkoutItem{
-            height: 8rem !important;
+            height: 7rem !important;
         }
     .product {
         padding: .75em !important;
@@ -263,8 +264,7 @@
         justify-content: center;
         height: 85%;
     }
-    .settings li, .paymentOption li, .checkoutDelivery> div li,
-    .checkoutPayment>div li, #DeliveryOption{
+    .settings li{
         padding: 1rem !important;
     }
     .order, .review {
@@ -281,8 +281,11 @@
         height: calc(100vh - 30rem) !important;
         padding-top: .75rem !important;
     }
+    .checkoutSummary {
+        height: calc(100vh - 26rem) !important;
+    }
     .checkout, .checkoutPaymentList, .paymentCheckoutList {
-        height: calc(100vh - 32.5rem) !important;
+        height: calc(100vh - 30.5rem) !important;
     }
     .checkoutPayment,
     .checkoutDelivery {
@@ -292,7 +295,7 @@
         max-height: calc(100vh - 30.5rem) !important;
     }
     .orderItemsList {
-        max-height: calc(100vh - 34.5rem) !important;
+        max-height: calc(100vh - 36.5rem) !important;
     }
     .settingsOption, .cart{
         height: calc(100vh - 17rem) !important;
@@ -353,7 +356,9 @@
 
 /* Tablets - Tall  */
 @media (min-width: 820px) and (min-height: 1180px) {
-    
+    #shippingOptions {
+        height: calc(100vh - 28rem);
+    }
 }
 
 /* Surface Duo */
@@ -414,9 +419,19 @@
 
 /* Tablets Large &  Laptops */
 @media (min-width: 800px) and (max-width: 1279px) and (max-height: 1368px) {
+    /* Shared */
+    .checkout,
+    .mobileCheckoutBtn, .addShippingAddressBtn, .addPaymentOptionBtn {
+        display: none !important;
+    }
+
+    .desktopFormButton,
+    #checkoutDesktop {
+        display: block !important;
+    }
 
     /* Text */
-    .mobileProductReviews .review b, .mobileProductReviews .review h6, #stockMessage {
+    .mobileProductReviews .review b, .mobileProductReviews .review h6, #stockMessage, .orderBreakdown p {
         font-size: 1.25rem !important;
     }
     .reviewProductDetails>span:first-of-type>h6 {
@@ -438,7 +453,8 @@
     
     /* Form */
     form{
-        max-width: 50% !important;
+        max-width: 70% !important;
+        margin: 0 auto !important;
     }
     legend{
         font: 2.25rem !important;
@@ -458,13 +474,10 @@
     }
 
     /* Containers */
-    .results, .orders {
+    .results, .orders, .itemSummary, .orderItemsList {
         display: grid !important;
-        grid-template-columns: 50% 50%;
-        grid-template-rows: auto;
-    }
-    .orders{
-        grid-template-rows: 33.3% 33.3% 33.3% !important;
+        grid-template-columns: 50% 50% !important;
+        grid-template-rows: max-content; 
     }
     .searchProduct, .order {
         margin: 0 auto !important;
@@ -506,13 +519,24 @@
         grid-template-rows: auto;
     }
     .about{
-        height: 40rem !important;
+        height: 26rem !important;
     }
     .cartItem {
         margin: 0 .5rem !important;
     }
     .infoReviewsRows {
         max-height: 25rem !important;
+    }
+    .col-8 {
+        flex: 0 0 auto;
+        width: 50% !important;
+    }
+    .col-4{
+        width: 50% !important;
+    }
+    #checkoutDesktop form {
+        max-width: 90% !important;
+        margin:  0 auto !important;
     }
 
     /* Animation */
@@ -536,7 +560,7 @@
 }
 
 /* Desktop */
-@media (min-width: 1280px) and (min-height: 1079px) {
+@media (min-width: 1280px) and (min-height: 900px) {
     
     /* Shared */
     .aboutNav, .mobileProductReviews, .reviewProductPortrait, .infoReviewsCarousel, #tabletView-productDescription, .checkout, .mobileCheckoutBtn, .mobileFormButton, .addPaymentOptionBtn, .addShippingAddressBtn, .mobileCheckoutBtn{
@@ -719,10 +743,10 @@
     .checkoutSummary {
         height: calc(100vh - 27.5rem) !important;
     }
-    .results, .orders, .checkoutPaymentList, .itemSummary, .itemsContainer, .addressList, .paymentList, .orderItemsList, #shippingOptions {
+    .results, .orders, .checkoutPaymentList, .itemSummary, .itemsContainer, .addressList, .paymentList, #shippingOptions, .orderItemsList {
         display: grid !important;
         grid-template-columns: 33.3% 33.3% 33.3% !important;
-        grid-template-rows: auto;
+        grid-template-rows: max-content !important;
     }
     .addressList, .paymentList{
         grid-template-rows: 26% !important;
@@ -775,18 +799,18 @@
 }
 
 /* Nest Hub */
-@media (width: 1024px) and (height: 600px) {
+@media (width: 1024px) and (height: 600px), (width: 1280px) and (height: 800px) {
     /* Shared */
     .mobileProductReviews,
-    .reviewProductPortrait, .infoReviewsRows, .checkout, .addPaymentOptionBtn {
+    .reviewProductPortrait, .infoReviewsRows, .checkout, .addPaymentOptionBtn, .mobileCheckoutBtnContainer, .addShippingAddressBtn {
         display: none !important;
     }    
 
     /* Text */
-    .home p, .settings b, .itemControl h6, .itemControl button {
+    .home p, .settings b, .itemControl h6, .itemControl button, #checkoutDesktop legend {
         font-size: 1rem !important;
     }
-    .orderProduct p, .orderProduct button, .orderProduct h6, .orderBreakdown b, .orderBreakdown p {
+    .orderProduct p, .orderProduct button, .orderProduct h6, .orderBreakdown b, .orderBreakdown p, .checkoutNavOption b, #checkoutDesktop input, #checkoutDesktop select {
         font-size: .75rem !important;
     }
     .copyrightAbout, #checkoutDesktop {
@@ -798,7 +822,7 @@
     .productDescription {
         max-height: calc(103vh - 23.35rem) !important;
     }
-    .itemControl h5 {
+    .itemControl h5, #checkoutDesktop label {
         font-size: .95rem !important;
     }
     #orderDetails h5 {
@@ -834,10 +858,14 @@
     /* Container */
     .home {
         width: 70% !important;
+        margin: 0 auto !important;
     }
     .col-8, .col-4 {
         flex: 0 0 auto;
         width: 50% !important;
+    }
+    .col-4, #checkoutDesktop .formButtonContainer button{
+        margin-top: 0 !important;
     }
     .fullFooter {
         padding-top: 0 !important;
@@ -853,10 +881,17 @@
     form {
         margin:  0 auto !important;
     }
+    #checkoutDesktop form {
+        max-width: 90% !important;
+    }
     .itemsContainer, .reviewsList, .itemSummary, .orderItemsList, .checkoutPaymentList {
         display: grid !important;
         grid-template-columns: 50% 50%;
-        grid-template-rows: auto;
+        grid-template-rows: max-content;
+    }
+    .checkoutPayment,
+    .checkoutDelivery {
+        height: calc(100vh - 19.5rem) !important;
     }
     .checkoutPaymentList {
         grid-template-columns: 100% !important;
@@ -873,11 +908,12 @@
     .checkoutItem {
         margin: .25rem !important;
     }
+    .checkoutPaymentList {
+        height: calc(100vh - 20.5rem) !important; 
+        grid-template-rows: max-content !important;
+    }
     .review {
         margin:.35rem !important;
-    }
-    .itemControl {
-        max-width: 50% !important;
     }
     .desktopReviewsContainer{
         height: calc(100vh - 23rem);
@@ -891,8 +927,11 @@
     .reviewsList{ 
         max-height: 100% !important;
     }
-    .desktopReviewsContainer, .itemControl {
+    .desktopReviewsContainer, .itemControl, #checkoutDesktop .formButtonContainer {
         margin-top: .5rem !important;
+    }
+    #checkoutDesktop .formButtonContainer {
+        align-items: start !important;
     }
     .productDetails, .infoReviewsCarousel, #orderDetails, #checkout {
         display: flex !important;
@@ -923,5 +962,26 @@
     }
     #productImagesCarousel {
         margin-right: .75rem !important;
+    }
+}
+
+/* Nest Hub Max */
+@media (width: 1280px) and (height: 800px) {
+    /* Text */
+    #checkoutDesktop legend {
+        font-size: 1.5rem !important;
+    }
+    #checkoutDesktop input, #checkoutDesktop select, #checkoutDesktop label {
+        font-size: 1.25rem !important;
+    }
+
+    /* Buttons */
+    #checkoutDesktop .formButtonContainer {
+        margin-top: 1rem !important;
+    }
+
+    /* Container  */
+    .home {
+        width: 80% !important;
     }
 }

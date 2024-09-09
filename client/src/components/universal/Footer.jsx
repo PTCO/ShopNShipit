@@ -17,7 +17,7 @@ import { Link, useLocation } from "react-router-dom";
 import About from "./About";
 
 const Footer = () => {
-    const { actions } = useContext(UserContext);
+    const { actions, user } = useContext(UserContext);
     const [about, setAbout ] = useState(true);
 
     const location = useLocation();
@@ -27,7 +27,7 @@ const Footer = () => {
             <p className="d-flex align-items-center bg-dark text-white px-1 mx-auto  fs-6 fw-bold rounded " onClick={ e => actions.navigate(location.state ? location.state: "/Home")}>
                 Close Footer <i class="fa-solid fa-caret-down fa-xl ms-1 "></i>
             </p>
-            <div className="d-flex pt-3  text-center flex-column mt-1 w-100 fullFooter">
+            <div className={`d-flex pt-3  text-center flex-column mt-1 w-100 fullFooter`} style={{margin: user ? null:"0 auto", maxWidth: user ? null:"90%"}}>
                 <h6 className="border-bottom border-2 pb-2 mb-2 contactTitle">Contact</h6>
                 <span className="d-flex justify-content-center align-items-center">
                     <b className="text-white p-1 rounded me-3" style={{background: "#bd7c71"}}>Socials</b>

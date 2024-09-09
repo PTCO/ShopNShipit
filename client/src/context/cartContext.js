@@ -11,6 +11,7 @@ export const CartProvider = (props) => {
     const [ change, setChange ] = useState(false);
     const [ addedItem , setAddedItem ] = useState(null);
     const [ outOfStock , setOutOfStock ] = useState([]);
+    const [ currentAddress, setCurrentAddress ] = useState({})
     
     const outOfStockCheck = async () => {
         await axios.post(`${process.env.REACT_APP_BACKEND_URL}/Cart/${user.User_ID}/Stock`)
@@ -82,7 +83,16 @@ export const CartProvider = (props) => {
                 return;
             }
             setTimeout(() => {
-                actions.navigate(`/Home/Checkout/Confirmation/${result.data.order.Order_ID}`)
+                const { Order_ID, Status, Delivery, SubTotal , Tax, ShippingPrice, ItemsCount} = result.data.order;
+
+                user.Shippings.map( address => {
+                    if(address.Current) {
+                        setCurrentAddress(address);
+                    }
+                })
+
+                actions.navigate(`/Home/Checkout/Confirmation/${Order_ID}`)
+                actions.accountNotifications("Confirmation", "Order confirmation #", Order_ID, user.Email, Status, currentAddress.State, currentAddress.City, currentAddress.AddressOne, currentAddress.AddressTwo, currentAddress.ZipCode, Delivery.Description, Delivery.Window, ShippingPrice, SubTotal, Tax,  ItemsCount)
                 cart.map( item => {
                     deleteItem(item.Cart_ID)
                 })
