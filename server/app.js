@@ -47,7 +47,7 @@ app.use(expressSession({
   saveUninitialized: false,
   resave: false,
   cookie: {
-    secure: "auto",
+    secure: true,
     httpOnly: false
   }
 }))
