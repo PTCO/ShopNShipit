@@ -16,9 +16,7 @@ const Navigation = () => {
     
     useEffect(()=>{
         setTimeout(() => {
-            if(OauthCookie || authCookie) {
-                searchActions.productSearch(query);
-            }
+            searchActions.productSearch(query);
         }, 1000);
     }, [location.pathname])
 
