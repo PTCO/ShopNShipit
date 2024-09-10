@@ -14,12 +14,14 @@ export const SearchProvider = (props) => {
     const [product, setProduct] = useState();
 
     const productSearch = async (query) => {
+        if(authCookie || OauthCookie) {
+            setTimeout(async () => {
+                await axios.get(`${process.env.REACT_APP_BACKEND_URL}/Search/${OauthCookie ? OauthCookie:authCookie}/${query ? query:"blank"}/${user.Filter.PriceStatus ? user.Filter.PriceLow:false}/${user.Filter.PriceStatus ? user.Filter.PriceHigh:false}/${user.Filter.RatingStatus ?  user.Filter.Rating:false}`)
+                .then( result => {setResults(result.data.results); setResultsType(result.data.type)})
+                .catch( error => actions.handleError(error.response))
+            }, 500);
+        }
         Cookie.set('query', query)
-        setTimeout(async () => {
-            await axios.get(`${process.env.REACT_APP_BACKEND_URL}/Search/${OauthCookie ? OauthCookie:authCookie}/${query ? query:"blank"}/${user.Filter.PriceStatus ? user.Filter.PriceLow:false}/${user.Filter.PriceStatus ? user.Filter.PriceHigh:false}/${user.Filter.RatingStatus ?  user.Filter.Rating:false}`)
-            .then( result => {setResults(result.data.results); setResultsType(result.data.type)})
-            .catch( error => actions.handleError(error.response))
-        }, 500);
     }
 
     const productDetails = async () => {
