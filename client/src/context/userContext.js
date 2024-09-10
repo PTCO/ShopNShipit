@@ -17,6 +17,7 @@ export const UserProvider = (props) => {
     const [errorMsg, setErrorMsg ] = useState({messages: [], type: ""}); // Global variable for "User account related" Form error messages data
 
     const handleError = (error) => { // Handles errors from axios requests
+        console.log(error);
         if(error && error.status === 401) return setErrorMsg({messages: error.data, type: ""});
         if(error && error.status === 404) return navigate('/NotFound'); // Change navigate route as needed
         if(error && error.status === 403) {
