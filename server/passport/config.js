@@ -13,7 +13,7 @@ passport.use(new googleStrategy(
     {
         clientID: process.env.GOOGLE_CLIENT_ID,
         clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-        callbackURL: `${process.env.BASE_URL}/Google/Callback`
+        callbackURL: `/Google/Callback`
     },
     async function(accessToken, refreshToken, profile, cb) {
         try {            
@@ -41,7 +41,7 @@ passport.use(new twitterStrategy(
         consumerKey: process.env.TWITTER_CONSUMER_KEY,
         consumerSecret: process.env.TWITTER_CONSUMER_SECRET,
         includeEmail: true, // Config option required - Do not change
-        callbackURL: `${process.env.BASE_URL}/Twitter/Callback`
+        callbackURL: `/Twitter/Callback`
     },
     async function(token, tokenSecret, profile, cb) {
         try {
