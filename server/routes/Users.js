@@ -9,7 +9,7 @@ const passport = require('passport');
 const googlePassportConfig = { 
   scope: ['profile', 'email'], // Google Scope - change scope as needed & LEAVE "session" option as false
   session: false, // Do Not Change
-  failureRedirect: "https://shop-n-shipit.vercel.app/LoginTest" // Change Redirect URL as needed - this runs if user rejects OAUTH signup/login or an error occurs
+  failureRedirect: "https://shop-n-shipit.vercel.app/Login" // Change Redirect URL as needed - this runs if user rejects OAUTH signup/login or an error occurs
 }; 
 
 const twitterPassportConfig = { 
@@ -44,6 +44,7 @@ const findUserCookie = async (req, res, user, request) => {
     req.session.save(); // Create new user session cookie with current user's ID
     if(request === 'Oauth') {
       return res.redirect('https://shop-n-shipit.vercel.app/Home')
+      // return res.redirect('http://localhost:3000/Home')
     }
     setTimeout(async () => {
       const cookies = await UserSessions.findAll();
@@ -66,6 +67,7 @@ const findUserCookie = async (req, res, user, request) => {
     req.session.userid = user.User_ID;
     req.session.save();
     return res.redirect('https://shop-n-shipit.vercel.app/Home')
+    // return res.redirect('http://localhost:3000/Home')
   }
 
   res.status(201).send({user:userAccount, sess: sessions[sessIndex].sid}) // Returns User's data along with newest user's session cookie data
