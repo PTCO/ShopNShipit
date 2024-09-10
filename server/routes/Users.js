@@ -9,7 +9,7 @@ const passport = require('passport');
 const googlePassportConfig = { 
   scope: ['profile', 'email'], // Google Scope - change scope as needed & LEAVE "session" option as false
   session: false, // Do Not Change
-  failureRedirect: "https://shop-n-shipit.vercel.app/Login" // Change Redirect URL as needed - this runs if user rejects OAUTH signup/login or an error occurs
+  failureRedirect: "https://shop-n-shipit.vercel.app/LoginTest" // Change Redirect URL as needed - this runs if user rejects OAUTH signup/login or an error occurs
 }; 
 
 const twitterPassportConfig = { 
