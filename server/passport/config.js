@@ -13,10 +13,11 @@ passport.use(new googleStrategy(
     {
         clientID: process.env.GOOGLE_CLIENT_ID,
         clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-        callbackURL: `/Google/Callback`
+        callbackURL: `https://shopnshipit-production.up.railway.app/Google/Callback`
     },
     async function(accessToken, refreshToken, profile, cb) {
-        try {            
+        try {         
+            console.log(profile);   
             const userCheck = await templateUser.findOne({ where: { Username: profile.displayName.replace(" ", "")}});
             if(userCheck) {
                 return cb(null, userCheck);
