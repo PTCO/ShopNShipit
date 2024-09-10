@@ -29,7 +29,7 @@ app.use(express.json({limit: "50mb"}));
 app.use(express.urlencoded({ extended: false }));
 app.use(logger('dev'));
 app.use(cors({
-  origin: process.env.BASE_URL, // Change origin as needed
+  origin: `${process.env.BASE_URL}`, // Change origin as needed
   credentials: true // Leave setting on true
 }));
 
