@@ -1,6 +1,5 @@
 module.exports = async (req, res, next) => {
     try {
-        console.log(req.params)
         const db = require('../../db');
         const throwError  = require('../helperFunctions/throwError');
         const { UserSessions } = db.models

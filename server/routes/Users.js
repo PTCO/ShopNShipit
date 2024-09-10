@@ -47,7 +47,8 @@ const findUserCookie = async (req, res, user, request) => {
     }
     setTimeout(async () => {
       const cookies = await UserSessions.findAll();
-      res.status(201).send({user:userAccount, sess: cookies[cookies.length - 1].sid}) // Returns User's data along with newly created user session cookie data
+      console.log(cookies[cookies.length - 1].dataValues.sid)
+      res.status(201).send({user:userAccount, sess: cookies[cookies.length - 1].dataValues.sid}) // Returns User's data along with newly created user session cookie data
     }, 2000)
     return;
   } 
@@ -209,7 +210,7 @@ router.get('/Signout/:userid', asyncHandler(async(req, res)=>{
   await findUserCookie(req, res, user, 'Delete');
 }))
 
-/* Get User Account Example with route auth user validation*/
+/* Get User Account with route auth user validation*/
 router.get('/User/:sid', authUserValidator, asyncHandler(async(req, res)=>{
   const cookie = await UserSessions.findOne({ where: { sid: req.params.sid}});
   const user =  await templateUser.findOne({ where: { User_ID: JSON.parse(cookie.data).userid}, attributes: { exclude: ['createdAt', 'updatedAt', 'confirmedPassword']}, include: [{model: Filters, required: true}, {model: Payments}, {model: Shipping}, {model: Delivery}]});

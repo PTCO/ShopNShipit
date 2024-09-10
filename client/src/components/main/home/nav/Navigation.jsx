@@ -7,7 +7,7 @@ import SearchContext from "../../../../context/searchContext";
 import Cookie from "js-cookie";
 
 const Navigation = () => {
-    const { actions , user } = useContext(UserContext);
+    const { actions , user, OauthCookie, authCookie } = useContext(UserContext);
     const { searchActions } = useContext(SearchContext);
     const location = useLocation();
     const [query, setQuery] = useState(Cookie.get('query') !== undefined? Cookie.get('query'):"");
@@ -16,7 +16,9 @@ const Navigation = () => {
     
     useEffect(()=>{
         setTimeout(() => {
-            searchActions.productSearch(query);
+            if(OauthCookie || authCookie) {
+                searchActions.productSearch(query);
+            }
         }, 1000);
     }, [location.pathname])
 

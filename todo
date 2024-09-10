@@ -1,16 +1,3 @@
-Notification system:
-
-- Create a system that update order status globally not just on order component
-  Add system send notification email to user's email on file
-- Style Confirmation Message or Email
-- Style & create route for order status change
-- Learn how to embed images into html for emails
-- Finish order update email notification
-
-Finish About & Help & Contact popup footer component
-
-- Add more Help tooltip details
-
 Nest Hub
 
 - Finish styling products reviews page to fit screen size

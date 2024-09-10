@@ -125,7 +125,7 @@ export const UserProvider = (props) => {
             await axios.get(`${process.env.REACT_APP_BACKEND_URL}/Signout/${data}`,) // Data should be a users ID - User_ID
             .then(() => navigate('/Login'))
             .catch( error => handleError(error.response))
-            .finally(()=> { Cookie.remove('usc'); Cookie.remove('sid'); Cookie.set('query', ""); setUser(null); })
+            .finally(()=> { Cookie.remove('usc'); Cookie.remove('sid'); Cookie.set('query', ""); setUser(null); setAuthCookie(null); })
         } catch (error) {
             handleError(error.response);
         }
