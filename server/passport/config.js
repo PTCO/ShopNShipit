@@ -17,7 +17,6 @@ passport.use(new googleStrategy(
     },
     async function(accessToken, refreshToken, profile, cb) {
         try {         
-            console.log(profile);   
             const userCheck = await templateUser.findOne({ where: { Username: profile.displayName.replace(" ", "")}});
             if(userCheck) {
                 return cb(null, userCheck);
