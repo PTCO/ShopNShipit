@@ -17,7 +17,6 @@ export const UserProvider = (props) => {
     const [errorMsg, setErrorMsg ] = useState({messages: [], type: ""}); // Global variable for "User account related" Form error messages data
 
     const handleError = (error) => { // Handles errors from axios requests
-        console.log(error);
         if(error && error.status === 401) return setErrorMsg({messages: error.data, type: ""});
         if(error && error.status === 404) return navigate('/NotFound'); // Change navigate route as needed
         if(error && error.status === 403) {
@@ -134,18 +133,18 @@ export const UserProvider = (props) => {
 
     /* User Cookie Session Check - returns user to "Signin" page, if session has ended */
     useEffect(()=>{
-        // setErrorMsg({messages: [], type: ""});
-        // if(authCookie || OauthCookie) {
-        //     (async()=>{
-        //         await axios.get(`${process.env.REACT_APP_BACKEND_URL}/User/${OauthCookie ? OauthCookie:authCookie}`)
-        //         .then( result => { setUser(result.data); navigate(location.pathname === '/Login' || location.pathname === '/Signin' ? '/Home':location.pathname) }) // Change navigate route as needed
-        //         .catch( error => handleError(error.response))
-        //     })()
-        // }
-        // else {
-        //     navigate('/Login')
-        //     return;
-        // }
+        setErrorMsg({messages: [], type: ""});
+        if(authCookie || OauthCookie) {
+            (async()=>{
+                await axios.get(`${process.env.REACT_APP_BACKEND_URL}/User/${OauthCookie ? OauthCookie:authCookie}`)
+                .then( result => { setUser(result.data); navigate(location.pathname === '/Login' || location.pathname === '/Signin' ? '/Home':location.pathname) }) // Change navigate route as needed
+                .catch( error => handleError(error.response))
+            })()
+        }
+        else {
+            navigate('/Login')
+            return;
+        }
     }, [location.pathname !== location.pathname])
 
     return (
