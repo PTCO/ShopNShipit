@@ -13,7 +13,7 @@ passport.use(new googleStrategy(
     {
         clientID: process.env.GOOGLE_CLIENT_ID,
         clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-        callbackURL: `https://shopnshipit-production.up.railway.app/Google/Callback`
+        callbackURL: `/Google/Callback`
     },
     async function(accessToken, refreshToken, profile, cb) {
         try {            
