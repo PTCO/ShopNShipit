@@ -12,12 +12,10 @@ const Oauth_Route = () => {
         const sid = location.pathname.split("/")[3]
         Cookie.set('usc', JSON.stringify(sid));
         actions.setAuthCookie(sid)
-        actions.navigate('/Home');
+        setTimeout(() => {
+            actions.navigate('/Home');
+        }, 2000);
     }, [])
-
-    return (
-        <h1>Loading</h1>
-    )
 }
 
 export default Oauth_Route;
