@@ -138,7 +138,9 @@ export const UserProvider = (props) => {
     /* User Cookie Session Check - returns user to "Signin" page, if session has ended */
     useEffect(()=>{
         setErrorMsg({messages: [], type: ""});
-        sessionCheck();
+        if(authCookie){
+            sessionCheck();
+        }
     }, [location.pathname !== location.pathname])
 
     return (
