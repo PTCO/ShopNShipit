@@ -45,7 +45,7 @@ const findUserCookie = async (req, res, user, request) => {
     const cookies = await UserSessions.findAll();
 
     if(request === 'Oauth') {
-      return res.redirect(`https://shop-n-shipit.vercel.app/Home/${cookies[cookies.length - 1].dataValues.sid}`)
+      return res.redirect(`https://shop-n-shipit.vercel.app/Home/Oauth/${cookies[cookies.length - 1].dataValues.sid}`)
       // return res.redirect('http://localhost:3000/Home')
     }
     setTimeout(async () => {
@@ -66,7 +66,7 @@ const findUserCookie = async (req, res, user, request) => {
   if(request === 'Oauth') {
     req.session.userid = user.User_ID;
     req.session.save();
-    return res.redirect(`https://shop-n-shipit.vercel.app/Home/${sessions[sessIndex].sid}`)
+    return res.redirect(`https://shop-n-shipit.vercel.app/Home/Oauth/${sessions[sessIndex].sid}`)
     // return res.redirect('http://localhost:3000/Home')
   }
 

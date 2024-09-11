@@ -50,7 +50,7 @@ function App() {
           {/* All Authorized User Content/Routes Go  here */}
           <Route element={<AuthRoute />}>
           {/* Add Routes here.... */}
-            <Route path='/Home/:sid' element={<Oauth_Route />} />
+            <Route path='/Home/Oauth/:sid' element={<Oauth_Route />} />
 
             <Route path='/Home' element={<Home />}>
               <Route path='Footer' element={<Footer />} />
