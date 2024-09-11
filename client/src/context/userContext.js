@@ -147,7 +147,6 @@ export const UserProvider = (props) => {
             location,
             errorMsg,
             authCookie,
-            OauthCookie,
             isDesktop,
             actions: {
                 navigate,
