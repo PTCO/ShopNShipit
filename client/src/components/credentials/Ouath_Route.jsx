@@ -9,8 +9,7 @@ const Oauth_Route = () => {
 
     useEffect(()=>{
         const sid = location.pathname.split("/")[3]
-        console.log(sid, location.pathname);
-        Cookie.set('usc', sid);
+        Cookie.set('usc', JSON.stringify(sid));
         actions.navigate('/Home');
     }, [])
 }
