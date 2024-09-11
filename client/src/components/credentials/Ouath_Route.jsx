@@ -14,6 +14,10 @@ const Oauth_Route = () => {
         actions.setAuthCookie(sid)
         actions.navigate('/Home');
     }, [])
+
+    return (
+        <h1>Loading</h1>
+    )
 }
 
 export default Oauth_Route;
