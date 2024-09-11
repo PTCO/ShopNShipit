@@ -8,7 +8,7 @@ const Oauth_Route = () => {
     const location = useLocation();
 
     useEffect(()=>{
-        const sid = location.pathname.split("/")[2]
+        const sid = location.pathname.split("/")[3]
         console.log(sid, location.pathname);
         Cookie.set('usc', sid);
         actions.navigate('/Home');
