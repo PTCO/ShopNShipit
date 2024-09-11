@@ -12,9 +12,7 @@ const Oauth_Route = () => {
         const sid = location.pathname.split("/")[3]
         Cookie.set('usc', JSON.stringify(sid));
         actions.setAuthCookie(sid)
-        setTimeout(() => {
-            actions.navigate('/Home');
-        }, 2000);
+        actions.navigate('/Home');
     }, [])
 }
 

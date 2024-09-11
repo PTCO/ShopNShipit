@@ -121,9 +121,11 @@ export const UserProvider = (props) => {
     const signout = async (data) => {
         try {
             await axios.get(`${process.env.REACT_APP_BACKEND_URL}/Signout/${data}`,) // Data should be a users ID - User_ID
-            .then(() => navigate('/Login'))
+            .then(() => {
+                Cookie.remove('usc'); Cookie.remove('sid'); Cookie.set('query', ""); setUser(null); setAuthCookie(null);
+                navigate('/Login')
+            })
             .catch( error => handleError(error.response))
-            .finally(()=> { Cookie.remove('usc'); Cookie.remove('sid'); Cookie.set('query', ""); setUser(null); setAuthCookie(null); })
         } catch (error) {
             handleError(error.response);
         }
@@ -131,7 +133,7 @@ export const UserProvider = (props) => {
 
     const sessionCheck = async () => {
         await axios.get(`${process.env.REACT_APP_BACKEND_URL}/User/${authCookie}`)
-        .then( result => { setUser(result.data); navigate(location.pathname === '/Login' || location.pathname === '/Signin' ? '/Home':location.pathname) }) // Change navigate route as needed
+        .then( result => { setUser(result.data); navigate(location.pathname === '/Login' || location.pathname === '/Signin' ? '/Home':location.pathname) ;console.log(user) }) // Change navigate route as needed
         .catch( error => handleError(error.response))
     }
 
