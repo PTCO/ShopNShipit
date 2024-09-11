@@ -42,13 +42,13 @@ const findUserCookie = async (req, res, user, request) => {
   if(!ck.includes(user.User_ID)) { // Checks if User ID is not included in array of User IDs from session cookies
     req.session.userid = user.User_ID;
     req.session.save(); // Create new user session cookie with current user's ID
+    const cookies = await UserSessions.findAll();
+
     if(request === 'Oauth') {
-      return res.redirect('https://shop-n-shipit.vercel.app/Home')
+      return res.redirect(`https://shop-n-shipit.vercel.app/Home/${cookies[cookies.length - 1].dataValues.sid}`)
       // return res.redirect('http://localhost:3000/Home')
     }
     setTimeout(async () => {
-      const cookies = await UserSessions.findAll();
-      console.log(cookies[cookies.length - 1].dataValues.sid)
       res.status(201).send({user:userAccount, sess: cookies[cookies.length - 1].dataValues.sid}) // Returns User's data along with newly created user session cookie data
     }, 2000)
     return;
@@ -66,7 +66,7 @@ const findUserCookie = async (req, res, user, request) => {
   if(request === 'Oauth') {
     req.session.userid = user.User_ID;
     req.session.save();
-    return res.redirect('https://shop-n-shipit.vercel.app/Home')
+    return res.redirect(`https://shop-n-shipit.vercel.app/Home/${sessions[sessIndex].sid}`)
     // return res.redirect('http://localhost:3000/Home')
   }
 

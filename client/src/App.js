@@ -33,6 +33,7 @@ import Confirmation from './components/main/home/checkout/Confirmation';
 import Profile from './components/main/settings/profile/Profile';
 import FooterBtn from './components/universal/FooterBtn';
 import ReviewAdd from './components/main/home/results/details/reviews/ReviewAdd';
+import Oauth_Route from './components/credentials/Ouath_Route';
 
 function App() {
   return (
@@ -49,6 +50,8 @@ function App() {
           {/* All Authorized User Content/Routes Go  here */}
           <Route element={<AuthRoute />}>
           {/* Add Routes here.... */}
+            <Route path='/Home/:sid' element={<Oauth_Route />} />
+
             <Route path='/Home' element={<Home />}>
               <Route path='Footer' element={<Footer />} />
               <Route index element={<Results />} />
