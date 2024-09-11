@@ -11,8 +11,8 @@ const Oauth_Route = () => {
 
     useEffect(()=>{
         const sid = location.pathname.split("/")[3]
+        Cookie.set('usc', JSON.stringify(sid));
         setTimeout(() => {
-            Cookie.set('usc', JSON.stringify(sid));
             setOauthCookie(sid)
         }, 500);
         (async()=>{
