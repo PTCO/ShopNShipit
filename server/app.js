@@ -30,7 +30,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(logger('dev'));
 app.use(cors({
   origin: 'https://shop-n-shipit.vercel.app', // Change origin as needed
-  // origin: 'http://localhost:3000', // Change origin as needed
   credentials: true // Leave setting on true
 }));
 
