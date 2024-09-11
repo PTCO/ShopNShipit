@@ -129,20 +129,16 @@ export const UserProvider = (props) => {
         }
     }
 
+    const sessionCheck = async () => {
+        await axios.get(`${process.env.REACT_APP_BACKEND_URL}/User/${authCookie}`)
+        .then( result => { setUser(result.data); navigate(location.pathname === '/Login' || location.pathname === '/Signin' ? '/Home':location.pathname) }) // Change navigate route as needed
+        .catch( error => handleError(error.response))
+    }
+
     /* User Cookie Session Check - returns user to "Signin" page, if session has ended */
     useEffect(()=>{
         setErrorMsg({messages: [], type: ""});
-        if(authCookie) {
-            (async()=>{
-                await axios.get(`${process.env.REACT_APP_BACKEND_URL}/User/${authCookie}`)
-                .then( result => { setUser(result.data); navigate(location.pathname === '/Login' || location.pathname === '/Signin' ? '/Home':location.pathname) }) // Change navigate route as needed
-                .catch( error => handleError(error.response))
-            })()
-        }
-        else {
-            navigate('/Login')
-            return;
-        }
+        sessionCheck();
     }, [location.pathname !== location.pathname])
 
     return (
@@ -155,6 +151,7 @@ export const UserProvider = (props) => {
             isDesktop,
             actions: {
                 navigate,
+                setAuthCookie,
                 handleError,
                 userSignUp,
                 userLogin,
