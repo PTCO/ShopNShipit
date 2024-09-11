@@ -133,7 +133,7 @@ export const UserProvider = (props) => {
 
     const sessionCheck = async (sid) => {
         await axios.get(`${process.env.REACT_APP_BACKEND_URL}/User/${sid}`)
-        .then( result => { setUser(result.data); navigate(location.pathname === '/Login' || location.pathname === '/Signin' ? '/Home':location.pathname); }) // Change navigate route as needed
+        .then( result => { setUser(result.data); navigate(location.pathname === '/Login' || location.pathname === '/Signin' || location.pathname.includes("/Home/Oauth") ? '/Home':location.pathname); }) // Change navigate route as needed
         .catch( error => handleError(error.response))
     }
 
