@@ -11,8 +11,10 @@ const Oauth_Route = () => {
 
     useEffect(()=>{
         const sid = location.pathname.split("/")[3]
-        Cookie.set('usc', JSON.stringify(sid));
-        setOauthCookie(sid)
+        setTimeout(() => {
+            Cookie.set('usc', JSON.stringify(sid));
+            setOauthCookie(sid)
+        }, 500);
         (async()=>{
             await axios.get(`${process.env.REACT_APP_BACKEND_URL}/User/${OauthCookie}`)
             .then( result => { actions.setUser(result.data); actions.navigate(location.pathname === '/Login' || location.pathname === '/Signin' ? '/Home':location.pathname) }) // Change navigate route as needed
