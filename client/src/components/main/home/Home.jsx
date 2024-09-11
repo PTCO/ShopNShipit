@@ -8,7 +8,7 @@ const Home = () => {
     const { user , actions } = useContext(UserContext);
 
     useEffect(()=>{
-        if(!Cookie.get('usc') && !Cookie.get('sid')) actions.navigate('/Login');
+        if(!Cookie.get('usc')) actions.navigate('/Login');
     }, [])
 
     return (
