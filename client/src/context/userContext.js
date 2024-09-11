@@ -154,6 +154,7 @@ export const UserProvider = (props) => {
             isDesktop,
             actions: {
                 navigate,
+                sessionCheck,
                 setAuthCookie,
                 handleError,
                 userSignUp,
