@@ -8,16 +8,17 @@ const Home = () => {
     const { user , actions } = useContext(UserContext);
 
     useEffect(()=>{
-        window.location.reload();
         if(!Cookie.get('usc')) actions.navigate('/Login');
     }, [])
 
-    return (
-        <div className="w-100 h-100 d-flex flex-column justify-content-center pt-1 px-4 home">
-            <Navigation />
-            <Outlet />
-        </div>
-    )
+    if(user) {
+        return (
+            <div className="w-100 h-100 d-flex flex-column justify-content-center pt-1 px-4 home">
+                <Navigation />
+                <Outlet />
+            </div>
+        )
+    }
 }
 
 export default Home;
