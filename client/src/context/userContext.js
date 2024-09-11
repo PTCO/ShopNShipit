@@ -134,18 +134,18 @@ export const UserProvider = (props) => {
 
     /* User Cookie Session Check - returns user to "Signin" page, if session has ended */
     useEffect(()=>{
-        setErrorMsg({messages: [], type: ""});
-        if(authCookie || OauthCookie) {
-            (async()=>{
-                await axios.get(`${process.env.REACT_APP_BACKEND_URL}/User/${OauthCookie ? OauthCookie:authCookie}`)
-                .then( result => { setUser(result.data); navigate(location.pathname === '/Login' || location.pathname === '/Signin' ? '/Home':location.pathname) }) // Change navigate route as needed
-                .catch( error => handleError(error.response))
-            })()
-        }
-        else {
-            navigate('/Login')
-            return;
-        }
+        // setErrorMsg({messages: [], type: ""});
+        // if(authCookie || OauthCookie) {
+        //     (async()=>{
+        //         await axios.get(`${process.env.REACT_APP_BACKEND_URL}/User/${OauthCookie ? OauthCookie:authCookie}`)
+        //         .then( result => { setUser(result.data); navigate(location.pathname === '/Login' || location.pathname === '/Signin' ? '/Home':location.pathname) }) // Change navigate route as needed
+        //         .catch( error => handleError(error.response))
+        //     })()
+        // }
+        // else {
+        //     navigate('/Login')
+        //     return;
+        // }
     }, [location.pathname !== location.pathname])
 
     return (
