@@ -131,9 +131,9 @@ export const UserProvider = (props) => {
         }
     }
 
-    const sessionCheck = async () => {
-        await axios.get(`${process.env.REACT_APP_BACKEND_URL}/User/${authCookie}`)
-        .then( result => { setUser(result.data); navigate(location.pathname === '/Login' || location.pathname === '/Signin' ? '/Home':location.pathname) ;console.log(user) }) // Change navigate route as needed
+    const sessionCheck = async (sid) => {
+        await axios.get(`${process.env.REACT_APP_BACKEND_URL}/User/${sid}`)
+        .then( result => { setUser(result.data); navigate(location.pathname === '/Login' || location.pathname === '/Signin' ? '/Home':location.pathname); }) // Change navigate route as needed
         .catch( error => handleError(error.response))
     }
 
@@ -141,7 +141,7 @@ export const UserProvider = (props) => {
     useEffect(()=>{
         setErrorMsg({messages: [], type: ""});
         if(authCookie){
-            sessionCheck();
+            sessionCheck(authCookie);
         }
     }, [location.pathname !== location.pathname])
 
