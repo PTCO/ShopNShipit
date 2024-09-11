@@ -8,6 +8,7 @@ const Home = () => {
     const { user , actions } = useContext(UserContext);
 
     useEffect(()=>{
+        location.reload();
         if(!Cookie.get('usc')) actions.navigate('/Login');
     }, [])
 
