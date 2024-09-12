@@ -230,9 +230,9 @@ router.get('/Google/Callback', passport.authenticate('google', googlePassportCon
 router.get('/Twitter', passport.authenticate('twitter', twitterPassportConfig));
 router.get('/Twitter/Callback', passport.authenticate('twitter', twitterPassportConfig), asyncHandler(async(req, res)=>{
   console.log(req.user);
-  // await Filters.create({
-  //   templateUserUserID: req.user
-  // });
+  await Filters.create({
+    templateUserUserID: req.user
+  });
   await findUserCookie(req, res, req.user, 'Oauth');
 }))
 
