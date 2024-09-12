@@ -27,9 +27,7 @@ const authUserValidator = require('./middleware/authUserValidation');
 const throwError  = require('./helperFunctions/throwError');
 
 /* Helper Functions */
-
 const asyncHandler = require('./helperFunctions/asyncHandler');
-const { where } = require('sequelize');
 
 // Find User Session Cookie Function
 const findUserCookie = async (req, res, user, request) => {
@@ -48,7 +46,6 @@ const findUserCookie = async (req, res, user, request) => {
       setTimeout(async () => {
         return res.redirect(`https://shop-n-shipit.vercel.app/Home/Oauth/${cookies[cookies.length - 1].sid}`)
       }, 2000)
-      // return res.redirect('http://localhost:3000/Home')
     }
     setTimeout(async () => {
       res.status(201).send({user:userAccount, sess: cookies[cookies.length - 1].sid}) // Returns User's data along with newly created user session cookie data
@@ -69,7 +66,6 @@ const findUserCookie = async (req, res, user, request) => {
     req.session.userid = user.User_ID;
     req.session.save();
     return res.redirect(`https://shop-n-shipit.vercel.app/Home/Oauth/${sessions[sessIndex].sid}`)
-    // return res.redirect('http://localhost:3000/Home')
   }
 
   res.status(201).send({user:userAccount, sess: sessions[sessIndex].sid}) // Returns User's data along with newest user's session cookie data
@@ -233,6 +229,9 @@ router.get('/Google/Callback', passport.authenticate('google', googlePassportCon
 /* Twitter Route Template */
 router.get('/Twitter', passport.authenticate('twitter', twitterPassportConfig));
 router.get('/Twitter/Callback', passport.authenticate('twitter', twitterPassportConfig), asyncHandler(async(req, res)=>{
+  await Filters.create({
+    templateUserUserID: req.user.User_ID
+  });
   await findUserCookie(req, res, req.user, 'Oauth');
 }))
 
