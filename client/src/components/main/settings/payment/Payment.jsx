@@ -30,6 +30,7 @@ const Payment = ({show}) => {
             </>
         )
     } else {
+        console.log(isCheckout)
         return (
             <>
                 <div className="d-flex flex-column col-8">
