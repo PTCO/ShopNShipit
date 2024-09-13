@@ -9,13 +9,13 @@ const passport = require('passport');
 const googlePassportConfig = { 
   scope: ['profile', 'email'], // Google Scope - change scope as needed & LEAVE "session" option as false
   session: false, // Do Not Change
-  failureRedirect: "https://shop-n-shipit.vercel.app/Login" // Change Redirect URL as needed - this runs if user rejects OAUTH signup/login or an error occurs
+  failureRedirect: "http://localhost:3000/Login" // Change Redirect URL as needed - this runs if user rejects OAUTH signup/login or an error occurs
 }; 
 
 const twitterPassportConfig = { 
   scope: ['users.read', 'offline.access'], // Twitter Scope - change scope as needed & LEAVE "session" option as false
   session: false, // Do Not Change 
-  failureRedirect: "https://shop-n-shipit.vercel.app/Login" // Change Redirect URL as needed - this runs if user rejects OAUTH signup/login or an error occurs
+  failureRedirect: "http://localhost:3000/Login" // Change Redirect URL as needed - this runs if user rejects OAUTH signup/login or an error occurs
 }; 
 
 /* Sequelize*/
@@ -39,15 +39,17 @@ const findUserCookie = async (req, res, user, request) => {
   if(!ck.includes(user.User_ID)) { // Checks if User ID is not included in array of User IDs from session cookies
     req.session.userid = user.User_ID;
     req.session.save(); // Create new user session cookie with current user's ID
-    const cookies = await UserSessions.findAll();
-
+    
     if(request === 'Oauth') {
       setTimeout(async () => {
-        res.redirect(`https://shop-n-shipit.vercel.app/Home/Oauth/${cookies[cookies.length - 1].sid}`)
+        const cookies = await UserSessions.findAll();
+        res.redirect(`http://localhost:3000/Home/Oauth/${cookies[cookies.length - 1].sid}`)
       }, 2000)
       return 
     }
+    
     setTimeout(async () => {
+      const cookies = await UserSessions.findAll();
       res.status(201).send({user:userAccount, sess: cookies[cookies.length - 1].sid}) // Returns User's data along with newly created user session cookie data
     }, 2000)
     return;
@@ -65,7 +67,7 @@ const findUserCookie = async (req, res, user, request) => {
   if(request === 'Oauth') {
     req.session.userid = user.User_ID;
     req.session.save();
-    return res.redirect(`https://shop-n-shipit.vercel.app/Home/Oauth/${sessions[sessIndex].sid}`)
+    return res.redirect(`http://localhost:3000/Home/Oauth/${sessions[sessIndex].sid}`)
   }
 
   res.status(201).send({user:userAccount, sess: sessions[sessIndex].sid}) // Returns User's data along with newest user's session cookie data
@@ -214,6 +216,7 @@ router.get('/Signout/:userid', asyncHandler(async(req, res)=>{
 router.get('/User/:sid', authUserValidator, asyncHandler(async(req, res)=>{
   const cookie = await UserSessions.findOne({ where: { sid: req.params.sid}});
   const user =  await templateUser.findOne({ where: { User_ID: JSON.parse(cookie.data).userid}, attributes: { exclude: ['createdAt', 'updatedAt', 'confirmedPassword']}, include: [{model: Filters, required: true}, {model: Payments}, {model: Shipping}, {model: Delivery}]});
+  console.log(user);
   res.status(201).send(user);
 }))
 
