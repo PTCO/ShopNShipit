@@ -9,13 +9,13 @@ const passport = require('passport');
 const googlePassportConfig = { 
   scope: ['profile', 'email'], // Google Scope - change scope as needed & LEAVE "session" option as false
   session: false, // Do Not Change
-  failureRedirect: "http://localhost:3000/Login" // Change Redirect URL as needed - this runs if user rejects OAUTH signup/login or an error occurs
+  failureRedirect: "https://shop-n-shipit.vercel.app/Login" // Change Redirect URL as needed - this runs if user rejects OAUTH signup/login or an error occurs
 }; 
 
 const twitterPassportConfig = { 
   scope: ['users.read', 'offline.access'], // Twitter Scope - change scope as needed & LEAVE "session" option as false
   session: false, // Do Not Change 
-  failureRedirect: "http://localhost:3000/Login" // Change Redirect URL as needed - this runs if user rejects OAUTH signup/login or an error occurs
+  failureRedirect: "https://shop-n-shipit.vercel.app/Login" // Change Redirect URL as needed - this runs if user rejects OAUTH signup/login or an error occurs
 }; 
 
 /* Sequelize*/
@@ -43,7 +43,7 @@ const findUserCookie = async (req, res, user, request) => {
     if(request === 'Oauth') {
       setTimeout(async () => {
         const cookies = await UserSessions.findAll();
-        res.redirect(`http://localhost:3000/Home/Oauth/${cookies[cookies.length - 1].sid}`)
+        res.redirect(`https://shop-n-shipit.vercel.app/Home/Oauth/${cookies[cookies.length - 1].sid}`)
       }, 2000)
       return 
     }
@@ -67,7 +67,7 @@ const findUserCookie = async (req, res, user, request) => {
   if(request === 'Oauth') {
     req.session.userid = user.User_ID;
     req.session.save();
-    return res.redirect(`http://localhost:3000/Home/Oauth/${sessions[sessIndex].sid}`)
+    return res.redirect(`https://shop-n-shipit.vercel.app/Home/Oauth/${sessions[sessIndex].sid}`)
   }
 
   res.status(201).send({user:userAccount, sess: sessions[sessIndex].sid}) // Returns User's data along with newest user's session cookie data
@@ -216,7 +216,6 @@ router.get('/Signout/:userid', asyncHandler(async(req, res)=>{
 router.get('/User/:sid', authUserValidator, asyncHandler(async(req, res)=>{
   const cookie = await UserSessions.findOne({ where: { sid: req.params.sid}});
   const user =  await templateUser.findOne({ where: { User_ID: JSON.parse(cookie.data).userid}, attributes: { exclude: ['createdAt', 'updatedAt', 'confirmedPassword']}, include: [{model: Filters, required: true}, {model: Payments}, {model: Shipping}, {model: Delivery}]});
-  console.log(user);
   res.status(201).send(user);
 }))
 
