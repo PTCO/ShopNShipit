@@ -10,6 +10,7 @@ const Payment = ({show}) => {
 
     useEffect(()=>{
         actions.setErrorMsg({messages: [], type: ""})
+        console.log(isCheckout);
     }, [])
 
     if(!isCheckout){
