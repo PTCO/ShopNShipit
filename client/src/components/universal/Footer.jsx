@@ -24,7 +24,7 @@ const Footer = () => {
 
     return (
         <footer className="d-flex flex-column w-100 mx-auto pt-2 mt-auto footerBtn">
-            <p className="d-flex align-items-center bg-dark text-white px-1 mx-auto  fs-6 fw-bold rounded " onClick={ e => actions.navigate(location.state ? location.state: "/Home")}>
+            <p className="d-flex align-items-center bg-dark text-white px-1 mx-auto  fs-6 fw-bold rounded " onClick={ e =>{user ?  actions.navigate(location.state ? location.state: "/Home"):actions.navigate("/Login")}}>
                 Close Footer <i class="fa-solid fa-caret-down fa-xl ms-1 "></i>
             </p>
             <div className={`d-flex pt-3  text-center flex-column mt-1 w-100 fullFooter`} style={{margin: user ? null:"0 auto", maxWidth: user ? null:"90%"}}>
