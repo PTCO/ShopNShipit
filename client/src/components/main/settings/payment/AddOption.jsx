@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Form from "../../../universal/Form";
 import SettingsContext from "../../../../context/settingsContext";
 import BackBtn from "../../../universal/BackBtn";
@@ -6,6 +6,9 @@ import BackBtn from "../../../universal/BackBtn";
 const AddOption = () => {
     const { settingsActions , isCheckout } = useContext(SettingsContext);
 
+    useEffect(()=>{
+        console.log(isCheckout);
+    })
 
     return (
         <div className={`mt-2 ${isCheckout ? 'col-4':null}`}>
