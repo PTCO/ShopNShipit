@@ -66,15 +66,15 @@ const Checkout = () => {
             <div className="checkout">
                 <h5 onClick={ e => show("payments")} className="border-bottom border-2 pb-1 mt-2 settingsTitle" >Payments <i class={`fa-${showPayments ? 'solid':'regular'} fa-square-caret-${showPayments ? 'down':'up'} ms-1`}></i></h5>
                 <div className={`${showPayments ? null:'d-none'} mt-2 checkoutPayment`}>
-                    <Payment />
+                    <Payment show={show}/>
                 </div>
                 <h5 onClick={ e => show("delivery")} className="border-bottom border-2 pb-1 mt-2  settingsTitle" >Delivery Address <i class={`fa-${showDelivery ? 'solid':'regular'} fa-square-caret-${showDelivery ? 'down':'up'} ms-1`}></i></h5>
                 <div className={`${showDelivery ? null:'d-none'} mb-2 checkoutDelivery`}>
-                    <Shipping />
+                    <Shipping show={show}/>
                 </div>
                 <h5 onClick={ e => show("showShippingOption")} className="border-bottom border-2 pb-1 mt-2  settingsTitle" >Shipping Option <i class={`fa-${showShippingOption ? 'solid':'regular'} fa-square-caret-${showShippingOption ? 'down':'up'} ms-1`}></i></h5>
                 <div className={`${showShippingOption ? null:'d-none'} checkoutShippingOption`}>
-                    <Delivery />
+                    <Delivery show={show}/>
                 </div>
                 <h5 onClick={ e => show("review")} className="border-bottom border-2 pb-1 settingsTitle mt-2" >Review & Summary <i class={`fa-${showReview ? 'solid':'regular'} fa-square-caret-${showReview ? 'down':'up'} ms-1`}></i></h5>
                 <div className={`${showReview ? 'd-flex':'d-none'} flex-column checkoutSummary`}>
@@ -94,6 +94,9 @@ const Checkout = () => {
                             <h6 className="d-flex align-items-center">Items <p className="p-1 rounded fw-bold text-white px-2 ms-1" style={{background: "#4d5c46"}}>{itemTotal}</p> </h6>
                             <h6 className="d-flex align-items-center ms-auto">Total <p className="fs-6 fw-bold ms-1 px-1 text-white rounded" style={{background: "#bd7c71"}}>$ {subtotal + 7.50 + 3.49}</p></h6>
                         </sapn>
+                        <span className="d-flex w-100 mb-2" style={{order: "2"}}>
+                            <button className="mt-2 p-1 w-25 me-auto btn btn-dark"  onClick={ e => show("showShippingOption")}>Back</button>
+                        </span>
                     </div>
                     <span className="d-flex pt-2 mb-1">
                         <BackBtn text={"Cart"} path={"/Home/Cart"} />

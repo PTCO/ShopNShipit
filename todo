@@ -1,1 +1,9 @@
 Clean up code - remove sid cookie gets from code
+
+Add next to mobile checkout page 
+
+Add form nto resizing in real time only on page reload
+
+Fix checkout add card to send user back to checkout page
+
+Disable place order button after it is clicked or order is processing 

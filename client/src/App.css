@@ -29,79 +29,87 @@
 }
 
 /* Logo */
-#SNSLogo{
+#SNSLogo {
   width: 3.5rem;
 }
 
 /* Headings */
-h1{
+h1 {
   font-size: 1.25rem;
 }
 
 /* Main, Footer, Header */
-footer{
+footer {
   min-height: 4rem;
 }
 
 /* Text */
-p{
+p {
   margin-bottom: 0;
   font-size: .85rem;
 }
 
 /* Lists */
-ul, ol {
+ul,
+ol {
   list-style: none;
   padding: 0;
-  margin:  0;
+  margin: 0;
 }
 
 /* FORMS */
-legend{
+legend {
   font-size: 1.5rem;
 }
+
 label {
   font-size: 1rem;
 }
-form label:first-of-type{
+
+form label:first-of-type {
   margin-top: .15rem;
 }
-input, textarea{
+
+input,
+textarea {
   font-size: .85rem !important;
 }
 
-input{
+input {
   padding: .25rem .75rem !important;
 }
 
-textarea{
+textarea {
   height: 4.25rem !important;
   resize: none;
 }
 
-input:hover, textarea:hover, select:hover{
+input:hover,
+textarea:hover,
+select:hover {
   box-shadow: none !important;
   outline: hidden !important;
   border-color: #4d5c46 !important;
 }
 
-.searchField{
+.searchField {
   padding: .35rem !important;
 }
 
-i:has(~.rating), .rating{
+i:has(~.rating),
+.rating {
   color: #bd7c71 !important;
 }
 
-#DeliveryOption > div > i{
+#DeliveryOption>div>i {
   font-size: 1.75rem !important;
 }
 
-.filterButton{
+.filterButton {
   padding: .25rem .5rem !important;
 }
 
-.product{
+.product {
   height: 5.5rem;
 }
 
@@ -114,19 +122,19 @@ i:has(~.rating), .rating{
   height: 4rem !important;
 }
 
-.strengthMsg{
+.strengthMsg {
   color: white !important;
   background: #4d5c46;
   padding-top: .35rem !important;
 }
 
-.results{
+.results {
   overflow-y: auto;
   max-height: 24rem;
 }
 
 .productPrice {
-  font-size:  1rem !important;
+  font-size: 1rem !important;
 }
 
 header button {
@@ -141,33 +149,37 @@ header button {
   width: 100% !important;
 }
 
-.home  button, .notification button {
+.home button,
+.notification button {
   font-size: .85rem !important;
 }
 
-.productDescription{
+.productDescription {
   max-height: calc(100vh - 35.35rem) !important;
   margin-bottom: .15rem !important;
 }
+
 .reviewsList {
   max-height: calc(100vh - 21.5rem) !important;
 }
-.reviewsList > div {
+
+.reviewsList>div {
   margin-right: 0 !important;
 }
 
 .review {
   width: 100% !important;
 }
+
 .review p {
   font-size: 1rem !important;
 }
 
-.reviewPortrait{
+.reviewPortrait {
   width: 3rem;
 }
 
-.reviewProductPortrait{
+.reviewProductPortrait {
   width: 5rem !important;
 }
 
@@ -193,51 +205,58 @@ header button {
   width: 8rem !important;
 }
 
-.productDetailPortrait{
+.productDetailPortrait {
   width: 46% !important;
   height: 100% !important;
 }
+
 .review .fa-tag {
   font-size: 1.25rem !important;
 }
-.reviewProductDetails > span:first-of-type > h6 {
+
+.reviewProductDetails>span:first-of-type>h6 {
   height: 3.45rem;
   overflow: auto !important;
 }
 
-.addedCartItemPortrait{
+.addedCartItemPortrait {
   width: 90%;
-  margin:  0 auto;
+  margin: 0 auto;
   height: 7rem;
 }
 
-.orderUpdatePortrait{
+.orderUpdatePortrait {
   width: fit-content;
   height: 5rem !important;
 }
 
-.itemControl h6, .itemControl input {
+.itemControl h6,
+.itemControl input {
   font-size: .75rem !important;
 }
+
 .itemControl input {
   padding: .18rem !important;
   text-align: center;
   font-weight: bold;
 }
+
 .itemControl button {
   padding: .15rem !important;
   font-size: .85rem !important;
 }
-.itemControl > span:first-of-type {
+
+.itemControl>span:first-of-type {
   width: 35%;
 }
-.aboutNav + div {
+
+.aboutNav+div {
   max-height: 55% !important;
 }
 
 #shippingOptions {
   height: calc(100vh - 22rem);
-    overflow-x: hidden;
+  overflow-x: hidden;
 }
 
 .cart {
@@ -256,91 +275,103 @@ header button {
   height: 100% !important;
 }
 
-.about p, .review h6 {
+.about p,
+.review h6 {
   font-size: .95rem !important;
 }
-.stockMessage{
+
+.stockMessage {
   width: 3rem !important;
   font-size: .85rem !important;
 }
+
 .review p {
   margin-bottom: 0 !important;
 }
 
-.orderProduct{
+.orderProduct {
   min-height: 5rem !important;
 }
+
 .orderProduct button {
   font-size: .95rem !important;
 }
-.orderProduct h6{
+
+.orderProduct h6 {
   font-size: .85rem !important;
 }
+
 .orderItemsList {
   height: calc(100vh - 27rem);
-  }
-  
-  .paymentList, .addressList {
-      height: calc(100vh - 23rem);
-  }
+}
 
-  .itemControl h5 {
-    font-size: 1.15rem !important;
-  }
+.paymentList,
+.addressList {
+  height: calc(100vh - 23rem);
+}
 
-  .itemSummary {
+.itemControl h5 {
+  font-size: 1.15rem !important;
+}
+
+.itemSummary {
   height: 100%;
   overflow-y: auto;
-  }
+}
 
-  .searchField + button {
-    border-color: #4d5c46 !important;
-  }
+.searchField+button {
+  border-color: #4d5c46 !important;
+}
 
-  .changePortraitImage{
+.changePortraitImage {
   width: 3.5rem !important;
-  }
+}
 
-  .checkoutPayment, .checkoutDelivery{
+.checkoutPayment,
+.checkoutDelivery {
   height: calc(100vh - 22rem);
-  }
+}
 
-  .checkoutPaymentList{
-  height: calc(100vh - 24.5rem);
+.checkoutPaymentList {
+  height: calc(100vh - 27rem);
   overflow-x: hidden;
-  }
+}
 
-  .checkoutSummary{
+.checkoutSummary {
   height: calc(100vh - 21.75rem);
-  }
-  .checkoutItem{
+}
+
+.checkoutItem {
   height: 4.5rem;
-  }
-  .checkoutItemImg{
+}
+
+.checkoutItemImg {
   height: 3.5rem;
   width: 4rem;
-  }
-  .productDetailPortraitSelect {
-    height: 2rem !important;
-  }
-  .orderProduct h6 {
-    word-break: break-all;
-  }
+}
 
-  .review small {
-    font-family: sans-serif !important;
-  }
+.productDetailPortraitSelect {
+  height: 2rem !important;
+}
 
-  .review small {
-    font-size: .85rem !important;
-  }
+.orderProduct h6 {
+  word-break: break-all;
+}
 
-  .orderBreakdown button{
-    font-size: .75rem !important;
-  }
-   
+.review small {
+  font-family: sans-serif !important;
+}
 
-  .fullFooter{
+.review small {
+  font-size: .85rem !important;
+}
+
+.orderBreakdown button {
+  font-size: .75rem !important;
+}
+
+
+.fullFooter {
   height: 0vh;
   animation-name: slide;
   animation-duration: .5s;
@@ -348,72 +379,85 @@ header button {
   animation-fill-mode: forwards;
   animation-timing-function: ease-in-out;
   overflow: hidden;
-  }
+}
 
-  .review img {
-    margin-bottom: auto !important;
-  }
+.review img {
+  margin-bottom: auto !important;
+}
 
-  #productTitle{
-    text-wrap: wrap;
-    word-break: break-all;
-    max-height: 2rem;
-    overflow: auto;
-    font-size: .8em;
-    margin-bottom: .25rem;
-  }
+#productTitle {
+  text-wrap: wrap;
+  word-break: break-all;
+  max-height: 2rem;
+  overflow: auto;
+  font-size: .8em;
+  margin-bottom: .25rem;
+}
 
-  .carouselImage{
+.carouselImage {
   width: 100%;
   height: 100% !important;
   grid-row: 1/2;
   grid-column: 1/2;
-  }
+}
 
-  #stockMessage{
-    font-size: .7rem !important;
-  }
+#stockMessage {
+  font-size: .7rem !important;
+}
 
-  #productDetailsImages{
-    margin-top: .5rem !important;
-    max-height: 8rem;
-  }
+#productDetailsImages {
+  margin-top: .5rem !important;
+  max-height: 8rem;
+}
 
-  .col-8 {
-    flex: none !important;
-    width: auto !important;
-  }
+.col-8 {
+  flex: none !important;
+  width: auto !important;
+}
 
-  .aboutHelp, .aboutContainer h2, .desktopProductReviews, .desktopReviewProductPortrait, .copyrightAbout, #tabletView-productDescription, .reviewText, .desktopImageSelection, .desktopFormButton, #checkoutDesktop {
-    display: none !important;
-  }
-  .mobileImageSelection {
-    height: 100% !important;
-    margin: 0 .5rem !important;
-    overflow-y: scroll;
-  }
-  .mobileImageSelection > div {
-    margin: .15rem 0;
-  }
-  
-  .imageCarouselContainer{
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: 100%;
-    height: 80%;
+.aboutHelp,
+.desktopAddMessage,
+.aboutContainer h2,
+.desktopProductReviews,
+.desktopReviewProductPortrait,
+.copyrightAbout,
+#tabletView-productDescription,
+.reviewText,
+.desktopImageSelection,
+.desktopFormButton,
+#checkoutDesktop {
+  display: none !important;
+}
 
-    }
-    
-  .aboutPortrait{
+.mobileImageSelection {
+  height: 100% !important;
+  margin: 0 .5rem !important;
+  overflow-y: scroll;
+}
+
+.mobileImageSelection>div {
+  margin: .15rem 0;
+}
+
+.imageCarouselContainer {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 100%;
+  height: 80%;
+
+}
+
+.aboutPortrait {
   width: 4rem !important;
   height: 4rem !important;
+}
+
+@keyframes slide {
+  from {
+    height: 0vh;
   }
 
-  @keyframes slide {
-    from {
-    height: 0vh;
-    }
-    to {
-      height: 81.5vh;
-    }
+  to {
+    height: 81.5vh;
   }
+}
