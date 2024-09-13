@@ -307,7 +307,7 @@ header button {
 
 .paymentList,
 .addressList {
-  height: calc(100vh - 23rem);
+  height: calc(100vh - 32rem) !important;
 }
 
 .itemControl h5 {
@@ -413,6 +413,10 @@ header button {
 .col-8 {
   flex: none !important;
   width: auto !important;
+}
+
+.col-4{
+  width: 100% !important;
 }
 
 .aboutHelp,
