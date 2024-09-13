@@ -34,6 +34,10 @@ const Payment = ({view}) => {
             <>
                 <div className="d-flex flex-column col-8">
                     <ul className="d-flex flex-column checkoutPaymentList  overflow-y-auto">    
+                        <li className={`${user.Shippings.length <= 0 ? 'd-flex':'d-none'} flex-column p-3 border border-2 rounded fw-bold mb-2 text-center`} >
+                            <h3 className="border-bottom border-2 pb-1 mb-2 settingsTitle" >Add Payment Options</h3>
+                            <p className={` rounded px-1 fs-4 fw-bold text-white`} style={{background: "#bd7c71"}}>User form on the right</p>
+                        </li>  
                         {user.Payments ? user.Payments.map( (option, index) => {
                             return (<Option key={option.Payment_ID} current={option.Current} type={option.Type} expiration={option.Expiration} last4={option.Last4} id={option.Payment_ID}/>)
                         }):null}

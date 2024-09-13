@@ -37,6 +37,10 @@ const Shipping = ({view}) => {
             <>
             <div className="d-flex flex-column col-8">
                 <ul className="d-flex flex-column checkoutPaymentList pt-2 overflow-y-auto">
+                    <li className={`${user.Shippings.length <= 0 ? 'd-flex':'d-none'} flex-column p-3 border border-2 rounded fw-bold mb-2 text-center`} >
+                        <h3 className="border-bottom border-2 pb-1 mb-2 settingsTitle" >Add Address Options</h3>
+                        <p className={` rounded px-1 fs-4 fw-bold text-white`} style={{background: "#bd7c71"}}>User form on the right</p>
+                    </li> 
                     {user.Shippings.map( address => {
                         return <Address key={address.Address_ID} id={address.Address_ID} addressone={address.AddressOne} addresstwo={address.AddressTwo} city={address.City} state={address.State} zip={address.ZipCode} current={address.Current}/>
                     })}
