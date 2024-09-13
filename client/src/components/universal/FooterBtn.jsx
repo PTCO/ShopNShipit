@@ -6,7 +6,7 @@ const FooterBtn = () => {
     const { actions, user } = useContext(UserContext);
     const location = useLocation();
 
-    if(!location.pathname.includes('/Home/Footer')) {
+    if(!location.pathname.includes('/Home/Footer') || !location.pathname.includes("/Footer")) {
         return (
             <footer className="d-flex align-items-center justify-content-center w-100 mx-auto mt-auto pb-4 footerBtn">
                 <p className="d-flex align-items-center bg-dark text-white px-1  fs-6 fw-bold rounded" onClick={ e => {user ? actions.navigate('/Home/Footer', {state: location.pathname}): actions.navigate('/Footer', {state: location.pathname})}}>See Footer <i class="fa-solid fa-caret-up fa-xl ms-1 "></i></p>
