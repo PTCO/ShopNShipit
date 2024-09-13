@@ -41,7 +41,7 @@ passport.use(new twitterStrategy(
         consumerKey: process.env.TWITTER_CONSUMER_KEY,
         consumerSecret: process.env.TWITTER_CONSUMER_SECRET,
         includeEmail: true, // Config option required - Do not change
-        callbackURL: `http://localhost:5000/Twitter/Callback`
+        callbackURL: `https://shopnshipit-production.up.railway.app/Twitter/Callback`
     },
     async function(token, tokenSecret, profile, cb) {
         try {
