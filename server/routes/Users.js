@@ -33,7 +33,6 @@ const asyncHandler = require('./helperFunctions/asyncHandler');
 const findUserCookie = async (req, res, user, request) => {
   const userAccount = await templateUser.findOne({where: {User_ID: user.User_ID}, attributes: { exclude: ['createdAt', 'updatedAt', 'confirmedPassword']}, include: [{model: Filters, required: true}, {model: Payments}, {model: Shipping}, {model: Delivery}]})
 
-
   const sessions = await UserSessions.findAll(); 
   const ck = sessions.map( sess => JSON.parse(sess.data).userid);  // Returns array of User IDs from each User session Cookie
 
@@ -44,8 +43,9 @@ const findUserCookie = async (req, res, user, request) => {
 
     if(request === 'Oauth') {
       setTimeout(async () => {
-        return res.redirect(`https://shop-n-shipit.vercel.app/Home/Oauth/${cookies[cookies.length - 1].sid}`)
+        res.redirect(`https://shop-n-shipit.vercel.app/Home/Oauth/${cookies[cookies.length - 1].sid}`)
       }, 2000)
+      return 
     }
     setTimeout(async () => {
       res.status(201).send({user:userAccount, sess: cookies[cookies.length - 1].sid}) // Returns User's data along with newly created user session cookie data
