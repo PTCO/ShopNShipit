@@ -8,7 +8,7 @@ const BackBtn = ({text, path, checkout}) => {
 
     useEffect(()=>{
         if(checkout) {
-            settingsActions.setIsCheckout(true)
+            settingsActions.setIsCheckout(false)
         }
     })
 
