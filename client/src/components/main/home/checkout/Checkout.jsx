@@ -50,7 +50,7 @@ const Checkout = () => {
             document.getElementById("portal").className = "null";
             return
         } 
-        settingsActions.setIsCheckout(true);
+        settingsActions.setIsCheckout(false);
         cartActions.getCart();
         let itemTotal = cart.map( item => item.Quantity);
         let subTotal = cart.map( item => {

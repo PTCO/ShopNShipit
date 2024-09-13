@@ -6,10 +6,6 @@ import BackBtn from "../../../universal/BackBtn";
 const AddOption = () => {
     const { settingsActions , isCheckout } = useContext(SettingsContext);
 
-    useEffect(()=>{
-        console.log(isCheckout);
-    })
-
     return (
         <div className={`mt-2 ${isCheckout ? 'col-4':null}`}>
             <Form
