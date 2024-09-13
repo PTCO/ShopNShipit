@@ -1,16 +1,16 @@
 import { useContext, useEffect } from "react"
 import UserContext from "../../context/userContext"
-import { Navigate, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 
 const AuthRoute = () => {
-    const { user , location } = useContext(UserContext);
-
+    const { user , actions, location } = useContext(UserContext);
+    useEffect(()=>{
+        if(!user) {
+            actions.navigate("/NotAuth", {state: location.pathname})
+        }
+    }, [])
     if(user) {
         return <Outlet />
-    } else {
-        setTimeout(() => {
-            return <Navigate to={"/NotAuth"} state={location.pathname}/>
-        }, 2000);
     }
 }
 
