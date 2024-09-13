@@ -1,10 +1,11 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import Form from "../../../universal/Form";
 import SettingsContext from "../../../../context/settingsContext";
 import BackBtn from "../../../universal/BackBtn";
 
 const AddOption = () => {
     const { settingsActions , isCheckout } = useContext(SettingsContext);
+
 
     return (
         <div className={`mt-2 ${isCheckout ? 'col-4':null}`}>
@@ -23,8 +24,8 @@ const AddOption = () => {
             />
             <div className={`mt-5 ${isCheckout ? 'mobileCheckoutBtnContainer':''} border-top border-2 pt-2 `}>
                 {isCheckout ?
-                <span className="mobileCheckoutBtn" >
-                    <BackBtn text={`Checkout`} path={"/Home/Checkout"} />
+                <span className="mobileCheckoutBtn">
+                    <BackBtn text={`Checkout`} path={"/Home/Checkout"}/>
                 </span>
                 :
                 <BackBtn text={`Payment`} path={"/Home/Settings/Payments"}/>
