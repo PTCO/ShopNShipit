@@ -25,7 +25,7 @@ const AddOption = () => {
             <div className={`mt-5 ${isCheckout ? 'mobileCheckoutBtnContainer':''} border-top border-2 pt-2 `}>
                 {isCheckout ?
                 <span className="mobileCheckoutBtn" >
-                    <BackBtn text={`Checkout`} path={"/Home/Checkout"} checkout={true}/>
+                    <BackBtn text={`Checkout`} path={"/Home/Checkout"} />
                 </span>
                 :
                 <BackBtn text={`Payment`} path={"/Home/Settings/Payments"}/>

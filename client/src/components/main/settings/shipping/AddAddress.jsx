@@ -22,8 +22,8 @@ const AddAddress = () => {
             />
             <div className={`mt-5 ${isCheckout ? 'mobileCheckoutBtnContainer':''} border-top border-2 pt-2 `}>
                 {isCheckout ?
-                <span className="mobileCheckoutBtn" onClick={ e => settingsActions.setIsCheckout(true)}>
-                    <BackBtn text={`Checkout`} path={"/Home/Checkout"} checkout={true}/>
+                <span className="mobileCheckoutBtn" >
+                    <BackBtn text={`Checkout`} path={"/Home/Checkout"}/>
                 </span>
                 :
                 <BackBtn text={`Shipping`} path={"/Home/Settings/Shipping"}/>
