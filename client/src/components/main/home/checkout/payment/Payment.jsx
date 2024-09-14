@@ -1,4 +1,12 @@
+import { useContext, useEffect } from "react";
+import UserContext from "../../../../context/userContext";
+import Option from "./Option";
+
 const Payment = () => {
+    const { actions , user } = useContext(UserContext);
+    useEffect(()=>{
+        actions.setErrorMsg({messages: [], type: ""})
+    }, [])
     return (
         <div className="d-flex flex-column col-8">
             <ul className="d-flex flex-column checkoutPaymentList  overflow-y-auto">    
