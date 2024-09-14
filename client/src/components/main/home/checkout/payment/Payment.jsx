@@ -23,7 +23,7 @@ const Payment = ({show}) => {
                 <i class="fa-solid fa-circle-plus fa-xl me-2 "></i> Add Payment Option
             </li>
             <span className="d-flex w-100" style={{order: "2"}}>
-                <button className="mt-2 p-1 w-25 ms-auto btn btn-dark" onClick={ e => actions.navigate('/Home/Cart')}>Cart</button>
+                <button className="mt-2 p-1 w-25 btn btn-dark" onClick={ e => actions.navigate('/Home/Cart')}>Cart</button>
                 <button className="mt-2 p-1 w-25 ms-auto btn btn-dark" style={{background: "#4d5c46"}} onClick={ e => show("delivery")}>Delivery</button>
             </span>
         </div>
