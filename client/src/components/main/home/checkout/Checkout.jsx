@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import Payment from "./payment/Payment";
-import Shipping from "../../settings/shipping/Shipping";
+import Shipping from "./shipping/Shipping";
 import CartContext from "../../../../context/cartContext";
 import Item from "../cart/Item";
 import SettingsContext from "../../../../context/settingsContext";

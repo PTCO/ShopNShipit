@@ -1,8 +1,8 @@
 import { useContext, useEffect } from "react";
-import UserContext from "../../../../context/userContext";
+import UserContext from "../../../../../context/userContext";
 import Option from "./Option";
 
-const Payment = () => {
+const Payment = ({show}) => {
     const { actions , user } = useContext(UserContext);
     useEffect(()=>{
         actions.setErrorMsg({messages: [], type: ""})
