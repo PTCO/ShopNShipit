@@ -1005,6 +1005,7 @@
 
     .reviewsList {
         overflow-x: hidden;
+        grid-template-columns: 33.3% 33.3% 33.3% !important;
     }
 
     .info,
