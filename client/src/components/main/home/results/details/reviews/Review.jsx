@@ -13,7 +13,10 @@ const Review = ({review}) => {
                     <img src={ShopNShipitLogo} className='reviewPortrait me-1 rounded-circle' alt="" />
                     <div className="d-flex flex-column">
                         <h6 className='d-flex w-100'>{review.Username}</h6>
-                        <p className='text-wrap mb-2' style={{wordBreak: "break-all"}}><b style={{background: "#4d5c46"}} className=' text-white fw-bold rounded px-2 '>{review.Summary}</b> <b className={`text-wrap fw-medium reviewText`}>{review.Review}</b></p>
+                        <p className='text-wrap mb-2' style={{wordBreak: "break-all"}}>
+                            <b style={{background: "#4d5c46"}} className=' text-white fw-bold rounded px-2 '>{review.Summary}</b> 
+                            <b className={`text-wrap fw-medium reviewText`} style={{height: location.pathname === "/Home/Product" ? "2rem":null, maxWidth: location.pathname === "/Home/Product" ? "12rem":null, overflow: location.pathname === "/Home/Product" ? "hidden":null}}>{review.Review}</b>
+                        </p>
                         
                         <span>
                             {tags.map( tag => { 
