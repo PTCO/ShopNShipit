@@ -246,10 +246,6 @@ header button {
   font-size: .85rem !important;
 }
 
-.itemControl>span:first-of-type {
-  width: 35%;
-}
-
 .aboutNav+div {
   max-height: 55% !important;
 }

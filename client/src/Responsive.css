@@ -1078,11 +1078,7 @@
     .notification {
         width: 20% !important;
     }
-
-    .itemControl>span:first-of-type {
-        width: 44%;
-    }
-
+    
     .cartItem {
         width: 97% !important;
         margin: 0 .25rem !important;
