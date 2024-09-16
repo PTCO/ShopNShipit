@@ -7,7 +7,7 @@ const Settings = () => {
 
     return (
         <div className="row">
-            <div className="my-sm-2 col-md-6">
+            <div className="my-sm-2 my-md-0 col-md-6">
                 <h2 className="border-bottom border-2 pb-1 mb-2 settingsTitle" >Orders</h2>
                 <ul>
                     <li className="p-2 border border-2 rounded fw-bold" onClick={ e => actions.navigate('/Home/Settings/Orders')}><i class="fa-solid fa-box fa-xl"></i> Your Orders</li>
