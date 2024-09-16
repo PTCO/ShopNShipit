@@ -6,7 +6,7 @@ const Settings = () => {
     const { actions } = useContext(UserContext);
 
     return (
-        <div>
+        <div className="row">
             <div className="my-sm-2 col-md-6">
                 <h2 className="border-bottom border-2 pb-1 mb-2 settingsTitle" >Orders</h2>
                 <ul>
