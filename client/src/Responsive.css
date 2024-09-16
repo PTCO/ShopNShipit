@@ -402,6 +402,7 @@
 
     .reviewsList {
         max-height: calc(100vh - 30.5rem) !important;
+        align-items: start !important;
     }
 
     .orderItemsList {
@@ -448,6 +449,7 @@
     .reviewsList>div {
         width: 98% !important;
         margin: .25rem auto !important;
+        height: fit-content !important;
     }
 
     .infoReviewsRows>div {
