@@ -231,7 +231,7 @@
 
     /* Buttons */
     .notification button,
-    header button {
+    header button, .searchField + button {
         font-size: 1.25rem !important;
     }
 
@@ -611,11 +611,6 @@
 
     .productDescription {
         font-size: 1.5rem !important;
-    }
-
-    /* Buttons */
-    .searchField + button {
-        font-size: 1.25rem !important;
     }
 
     /* Form */
