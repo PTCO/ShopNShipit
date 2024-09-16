@@ -41,6 +41,14 @@ const Checkout = () => {
         }
     }
 
+    const [disabledBtn, setDisabledBtn ] = useState(false);
+    const disableBtn = () => {
+        setDisabledBtn(true);
+        setTimeout(() => {
+            setDisabledBtn(false);
+        }, 3000);
+    }
+
     useEffect(()=>{
         if(cart.length === 0) {
             return actions.navigate('/Home/Cart')
@@ -100,7 +108,7 @@ const Checkout = () => {
                     </div>
                     <span className="d-flex pt-2 mb-1">
                         <BackBtn text={"Cart"} path={"/Home/Cart"} />
-                        <button onClick={ e => cartActions.checkout(user.User_ID, cart[cart.length - 1].Product.Portrait, itemTotal, subtotal, cart, user.Delivery)} className="btn btn-dark ms-auto mb-auto" style={{fontSize: ".95rem"}}>Place Order</button>
+                        <button disabled={disabledBtn} onClick={ e => {disableBtn(); cartActions.checkout(user.User_ID, cart[cart.length - 1].Product.Portrait, itemTotal, subtotal, cart, user.Delivery)}} className="btn btn-dark ms-auto mb-auto" style={{fontSize: ".95rem"}}>Place Order</button>
                     </span>
                     {errorMsg.messages ? errorMsg.messages.map( (message, index) => {return <p key={index} className={`d-flex ${errorMsg.type === "payment" ? "mx-auto":null} align-items-center fs-6 mt-1 fw-bold mx-auto`}>{message} <i className={`fa-solid ${errorMsg.type === "success" ? "fa-circle-check text-success":"fa-circle-exclamation text-danger"} fa-beat fa-lg ms-1 `}></i></p>}):null}
                     
@@ -110,9 +118,9 @@ const Checkout = () => {
                 <nav className="d-flex w-100">
                     <ul className="d-flex align-items-center">
                         <li onClick={ e => show("payments")}  className={`checkoutNavOption d-flex align-items-center btn ${showPayments ? "checkOutNavSelected":null}`}><b className=" fs-3 me-2">1</b> <b className="btn btn-dark">Payments</b></li>
-                        <li onClick={ e => show("delivery")}  className={`checkoutNavOption d-flex mx-3  btn ${showDelivery ? " checkOutNavSelected ":null}`}><b className=" fs-3 me-2">2</b> <b className="btn btn-dark">Delivery Address</b></li>
-                        <li onClick={ e => show("showShippingOption")}  className={`checkoutNavOption d-flex me-3 btn ${showShippingOption ? " checkOutNavSelected ":null}`}><b className=" fs-3 me-2">3</b> <b className="btn btn-dark">Shipping Option</b></li>
-                        <li onClick={ e => show("review")} className={`checkoutNavOption d-flex  btn ${showReview ? " checkOutNavSelected ":null}`}><b className=" fs-3 me-2">4</b> <b className="btn btn-dark">Review & Summary</b></li>
+                        <li onClick={ e => show("delivery")}  className={`checkoutNavOption d-flex align-items-center mx-3  btn ${showDelivery ? " checkOutNavSelected ":null}`}><b className=" fs-3 me-2">2</b> <b className="btn btn-dark">Delivery Address</b></li>
+                        <li onClick={ e => show("showShippingOption")}  className={`checkoutNavOption align-items-center d-flex me-3 btn ${showShippingOption ? " checkOutNavSelected ":null}`}><b className=" fs-3 me-2">3</b> <b className="btn btn-dark">Shipping Option</b></li>
+                        <li onClick={ e => show("review")} className={`checkoutNavOption align-items-center d-flex  btn ${showReview ? " checkOutNavSelected ":null}`}><b className=" fs-3 me-2">4</b> <b className="btn btn-dark">Review & Summary</b></li>
                     </ul>
                 </nav>
                 <div className={`${showPayments ? null:'d-none'} mt-2 checkoutPayment row`}>
@@ -144,12 +152,12 @@ const Checkout = () => {
                             <h6 className="d-flex align-items-center ms-auto">Total <p className="fs-6 fw-bold ms-1 px-1 text-white rounded" style={{background: "#bd7c71"}}>$ {subtotal + 7.50 + 3.49}</p></h6>
                         </sapn>
                     </div>
-                    {errorMsg.messages ? errorMsg.messages.map( (message, index) => {return <p key={index} className={`d-flex ${errorMsg.type === "payment" ? "mx-auto":null} align-items-center fs-6 mt-1 fw-bold mx-auto`}>{message} <i className={`fa-solid ${errorMsg.type === "success" ? "fa-circle-check text-success":"fa-circle-exclamation text-danger"} fa-beat fa-lg ms-1 `}></i></p>}):null}
-                    
+                    {errorMsg.messages ? errorMsg.messages.map( (message, index) => {return <p key={index} className={`d-flex ${errorMsg.type === "payment" ? "mx-auto":null} align-items-center fs-6 mt-2 fw-bold mx-auto`}>{message} <i className={`fa-solid ${errorMsg.type === "success" ? "fa-circle-check text-success":"fa-circle-exclamation text-danger"} fa-beat fa-lg ms-1 `}></i></p>}):null}
+
                 </div>
                 <span className="d-flex mt-2 pt-2 mb-1">
                     <BackBtn text={"Cart"} path={"/Home/Cart"} />
-                    <button type="submit" onClick={ e => { cartActions.checkout(user.User_ID, cart[cart.length - 1].Product.Portrait, itemTotal, subtotal, cart, user.Delivery)}} className="btn btn-dark ms-2 mb-auto" style={{fontSize: ".95rem"}}>Place Order</button>
+                    <button type="submit"  onClick={ e => {cartActions.checkout(user.User_ID, cart[cart.length - 1].Product.Portrait, itemTotal, subtotal, cart, user.Delivery)}} className="btn btn-dark ms-2 mb-auto" style={{fontSize: ".95rem"}}>Place Order</button>
                 </span>
             </div>
         </>

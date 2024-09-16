@@ -22,7 +22,7 @@ const Address = ({id, addressone, addresstwo, city, state, zip, current}) => {
                         <h6>{zip}</h6>
                     </span>
                 </div>
-                <button className={`btn ${consent ? "text-white":"text-black"} border border-2 mt-auto p-1 px-2`} style={{background: consent ? "#4d5c46":null}} onClick={ e => setEdit(true)}>
+                <button className={`btn ${consent ? "text-white":"text-black"} border border-2 mt-auto p-1 px-2`} id={"editBtn"} style={{background: consent ? "#4d5c46":null}} onClick={ e => setEdit(true)}>
                     <i class="fa-solid fa-pen"></i>
                 </button>
             </li>

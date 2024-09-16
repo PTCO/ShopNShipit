@@ -25,7 +25,7 @@ const Shipping = ({show}) => {
             <li className="d-flex align-items-center border border-2 p-1 mt-2 rounded fw-bold addShippingAddressBtn" onClick={ e => actions.navigate('/Home/Settings/Shipping/Add', {state: "checkout"})} style={{order: "1"}}>
                 <i class="fa-solid fa-circle-plus fa-xl me-2 "></i> Add New Address
             </li>
-            <span className="d-flex w-100" style={{order: "2"}}>
+            <span className="d-flex w-100 mobileCheckoutNav" style={{order: "2"}}>
                 <button className="mt-2 p-1 w-25 me-auto btn btn-dark"  onClick={ e => show("payments")}>Back</button>
                 <button className="mt-2 p-1 w-25 ms-auto btn btn-dark" style={{background: "#4d5c46"}} onClick={ e => show("showShippingOption")}>Shipping</button>
             </span>

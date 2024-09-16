@@ -17,7 +17,7 @@ const Option = ({type, last4, expiration, id, current}) => {
                     <i className={`fa-brands fa-cc-${type} fa-2x`}></i>
                     <p className="ms-2 px-1 rounded text-white fs-6" style={{background: "#bd7c71"}}>Ending {last4}</p>
                     <p className="ms-2 px-1 rounded text-white fs-6" style={{background: "#4d5c46"}}>Exp {expiration}</p>
-                    <button className={`btn ${edit ? "text-white":"text-black"} border border-2 px-2 p-1 rounded ms-auto`} onClick={ e => setEdit(true)} style={{background: edit ? "#4d5c46":null}}> 
+                    <button className={`btn ${edit ? "text-white":"text-black"} border border-2 px-2 p-1 rounded ms-auto `} id={"editBtn"} onClick={ e => setEdit(true)} style={{background: edit ? "#4d5c46":null}}> 
                         <i className="fa-solid fa-pen ms-auto"></i>
                     </button>
                 </span>

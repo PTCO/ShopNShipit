@@ -3,7 +3,7 @@ import { useState } from "react";
 const ImageCarousel = ({images}) => {
     const [counter, setCounter ] = useState(0);
     return (
-        <div className="d-flex flex-column ">
+        <div className="d-flex flex-column " style={{height: "fit-content"}}>
             <div className="imageCarouselContainer mb-2">
                 {images.map( (image, index) => {
                     return <img key={index} className="border border-2 carouselImage" src={image} alt="" srcset="" style={{zIndex: counter === index ? 999:0}} />

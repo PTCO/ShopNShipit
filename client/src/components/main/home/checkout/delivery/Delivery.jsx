@@ -16,11 +16,11 @@ const Delivery = ({show}) => {
     }, [])
 
     return (
-        <div id="shippingOptions" className="d-flex flex-column col-8">
+        <div id="shippingOptions" className="d-flex flex-column col-12">
             {options.map( option => {
                 return <Option key={option.Option_ID} option={option}/>
             })}
-            <span className="d-flex w-100" style={{order: "2"}}>
+            <span className="d-flex w-100 mobileCheckoutNav" style={{order: "2"}}>
                 <button className="mt-2 w-25 p-1 me-auto btn btn-dark"  onClick={ e => show("delivery")}>Back</button>
                 <button className="mt-2 w-25 p-1 ms-auto btn btn-dark" style={{background: "#4d5c46"}}  onClick={ e => show("review")}>Review</button>
             </span>

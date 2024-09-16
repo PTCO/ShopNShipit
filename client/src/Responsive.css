@@ -152,7 +152,7 @@
     }
 
     #DeliveryOption {
-        min-height: 5.75rem !important;
+        height: fit-content !important;
     }
 
     .orderItemsList {
@@ -213,14 +213,16 @@
     }
 
     /* Form */
-    form input,
     .filters input,
     textarea,
     select {
         font-size: 1.45rem !important;
     }
 
-    .searchField {
+    .searchField,
+    form label,
+    form input,
+    form select {
         font-size: 1.25rem !important;
     }
 
@@ -343,7 +345,7 @@
 
     .imageCarouselContainer {
         padding-top: 1rem !important;
-        grid-template-columns: 85%;
+        grid-template-columns: 75%;
         justify-content: center;
         height: 85%;
     }
@@ -555,7 +557,8 @@
     .mobileCheckoutBtn,
     .addShippingAddressBtn,
     .addPaymentOptionBtn,
-    .mobileAddMessage {
+    .mobileAddMessage,
+    .mobileCheckoutNav {
         display: none !important;
     }
 
@@ -587,6 +590,10 @@
 
     #productTitle {
         max-height: 8rem !important;
+    }
+
+    .checkoutNavOption b {
+        font-size: .85rem !important;
     }
 
     .productDescription {
@@ -640,7 +647,7 @@
     }
 
     .imageCarouselContainer {
-        grid-template-columns: 70% !important;
+        grid-template-columns: 50% !important;
         grid-template-rows: 100% !important;
         height: 60% !important;
         justify-content: center;
@@ -703,6 +710,11 @@
         width: 50% !important;
     }
 
+    .checkoutNavOption {
+        margin: 0 !important;
+        padding: .25rem !important;
+    }
+
     #checkoutDesktop form {
         max-width: 90% !important;
         margin: 0 auto !important;
@@ -734,6 +746,7 @@
     /* Shared */
     .aboutNav,
     .mobileProductReviews,
+    .mobileCheckoutNav,
     .reviewProductPortrait,
     .infoReviewsCarousel,
     #tabletView-productDescription,
@@ -817,6 +830,10 @@
         cursor: pointer;
     }
 
+    .checkoutNavOption b {
+        font-size: 1.15rem !important;
+    }
+
     .checkoutNavOption b:first-of-type {
         font-family: "copal-std-solid", sans-serif;
     }
@@ -881,6 +898,7 @@
     }
 
     /* Containers */
+
     .col-8 {
         flex: 0 0 auto;
         width: 66.66666667% !important;
@@ -1022,7 +1040,8 @@
     }
 
     .addressList,
-    .paymentList {
+    .paymentList,
+    .checkoutPaymentList {
         grid-template-columns: 50% 50% !important;
     }
 
@@ -1073,11 +1092,34 @@
         border: none !important;
     }
 
-    .col-4>form {
-        max-width: 90% !important;
+    .col-4 {
+        width: 33.3% !important;
+    }
+
+    .col-4 form {
+        max-width: 100% !important;
     }
 
 
+}
+
+@media (min-width: 1400px) and (min-height: 900px) {
+
+    /* Text */
+    .paymentOption span p,
+    #editBtn {
+        font-size: .8rem !important;
+    }
+
+    /* Containers */
+    .checkoutPaymentList {
+        grid-template-columns: 33.3% 33.3% 33.3% !important;
+    }
+
+    .carouselImage {
+        width: 85% !important;
+        margin: 0 auto !important;
+    }
 }
 
 /* Nest Hub */

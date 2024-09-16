@@ -9,7 +9,7 @@ const Results = ( ) => {
     return (
         <>
             <ResultsDetails />
-            <div className="d-flex flex-column align-items-center results">
+            <div className="d-flex flex-column results">
                 {results.map( product => (
                     <Product key={product} id={product.Product_ID} stock={product.Stock} reviews={product.Reviews} rating={product.Rating} title={product.Title} highlight={product.Highlight} price={product.Price} img={product.Portrait}/>
                 ))}
