@@ -613,6 +613,11 @@
         font-size: 1.5rem !important;
     }
 
+    /* Buttons */
+    .searchField + button {
+        font-size: 1.25rem !important;
+    }
+
     /* Form */
     form {
         max-width: 70% !important;
