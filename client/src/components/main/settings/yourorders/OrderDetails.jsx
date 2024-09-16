@@ -17,8 +17,8 @@ const OrderDetails = () => {
                 settingsActions.updateOrderStatus(order.Order_ID, "Shipped");
                 setTimeout(() => {
                     settingsActions.updateOrderStatus(order.Order_ID, "Delivered");
-                }, 10000);
-            }, 5000);
+                }, 60000);
+            }, 30000);
         }
     }, [])
 
