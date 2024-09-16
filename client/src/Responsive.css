@@ -299,7 +299,7 @@
     }
 
     .productDetailPortrait {
-        width: 100% !important;
+        margin: 0 auto !important;
         height: 50% !important;
     }
 
@@ -631,9 +631,6 @@
     }
 
     /* Images */
-    .productDetailPortrait {
-        padding: 0 2.25rem !important;
-    }
     .reviewProductPortrait {
         width: 9rem !important;
         height: 7rem !important;
