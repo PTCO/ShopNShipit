@@ -814,13 +814,13 @@
 
     .review p {
         display: inline-block;
-        width: 35rem !important;
+        /* width: 35rem !important; */
         overflow: hidden;
     }
 
     .reviewText {
         display: inline-block;
-        width: 23rem !important;
+        /* width: 23rem !important; */
         text-wrap: nowrap !important;
     }
 
