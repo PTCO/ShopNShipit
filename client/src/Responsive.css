@@ -1032,7 +1032,6 @@
     .itemsContainer,
     .addressList,
     .paymentList,
-    #shippingOptions,
     .orderItemsList {
         display: grid !important;
         grid-template-columns: 33.3% 33.3% 33.3% !important;
@@ -1042,10 +1041,6 @@
     .addressList,
     .paymentList {
         grid-template-rows: 26% !important;
-    }
-
-    #shippingOptions {
-        grid-template-rows: 18% !important;
     }
 
     .addressList,
