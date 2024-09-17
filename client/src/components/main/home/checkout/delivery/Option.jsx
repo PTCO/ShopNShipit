@@ -14,7 +14,7 @@ const Option = ({option}) => {
     }, [user.Delivery])
 
     return (
-        <div id="DeliveryOption" className={`d-flex border border-2 p-2 mt-2 rounded ${current ? 'fa-bounce':null}`} onClick={ e => actions.selectShippingOption(option.Option_ID)} style={{order: `${current ? "0":"1"}`}}>
+        <div id="DeliveryOption" className={`d-flex border border-2 col-4 p-2 mt-2 rounded ${current ? 'fa-bounce':null}`} onClick={ e => actions.selectShippingOption(option.Option_ID)} style={{order: `${current ? "0":"1"}`}}>
             <div className="d-flex flex-column align-items-center me-2">
                 <i class={`${current ? 'fa-solid fa-square-check':'fa-regular fa-square'} fa-2x mb-1`} onClick={ e => ""} style={{color: "#4d5c46"}}></i>
                 <p className={`${current ? null:"opacity-0"} rounded px-1 fs-6 fw-bold text-white`} style={{background: "#bd7c71"}}>Current</p>

@@ -131,7 +131,7 @@ const Checkout = () => {
                     <Shipping />
                     <AddAddress />
                 </div>
-                <div className={`${showShippingOption ? null:'d-none'} mt-2 checkoutShippingOption row`}>
+                <div className={`${showShippingOption ? null:'d-none'} mt-2 checkoutShippingOption`}>
                     <Delivery />
                 </div>
                 <div className={`${showReview ? 'd-flex':'d-none'} flex-column checkoutSummary`}>

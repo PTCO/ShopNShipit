@@ -16,7 +16,7 @@ const Delivery = ({show}) => {
     }, [])
 
     return (
-        <div id="shippingOptions" className="d-flex flex-column col-12">
+        <div id="shippingOptions" className="d-flex flex-column row">
             {options.map( option => {
                 return <Option key={option.Option_ID} option={option}/>
             })}
