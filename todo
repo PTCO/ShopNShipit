@@ -1,9 +1,1 @@
-Clean up code - remove sid cookie gets from code 
 
-Add form nto resizing in real time only on page reload
-
-Fix checkout add card to send user back to checkout page
-
-Disable place order button after it is clicked or order is processing 
-
-fix cart item number on home page

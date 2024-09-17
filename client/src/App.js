@@ -12,7 +12,6 @@ import Home from './components/main/home/Home';
 import AuthRoute from './components/universal/AuthRoute';
 import Footer from './components/universal/Footer';
 import Main from './components/universal/Main';
-import About from './components/main/About';
 import Filter from './components/main/home/filter/Filter';
 import Results from './components/main/home/results/Results';
 import Details from './components/main/home/results/details/Details';
@@ -92,7 +91,6 @@ function App() {
                 <Route path='Add' element={<ReviewAdd />} />
               </Route>
             </Route>
-            <Route path='/About' element={<About />}/>
           </Route>
 
           {/* Error Routes */}

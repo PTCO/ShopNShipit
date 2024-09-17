@@ -50,6 +50,7 @@ const Checkout = () => {
     }
 
     useEffect(()=>{
+        console.log(user.Delivery)
         if(cart.length === 0) {
             return actions.navigate('/Home/Cart')
         }
@@ -100,7 +101,7 @@ const Checkout = () => {
                         </div>
                         <sapn className="d-flex align-items-center w-100">
                             <h6 className="d-flex align-items-center">Items <p className="p-1 rounded fw-bold text-white px-2 ms-1" style={{background: "#4d5c46"}}>{itemTotal}</p> </h6>
-                            <h6 className="d-flex align-items-center ms-auto">Total <p className="fs-6 fw-bold ms-1 px-1 text-white rounded" style={{background: "#bd7c71"}}>$ {subtotal + 7.50 + 3.49}</p></h6>
+                            <h6 className="d-flex align-items-center ms-auto">Total <p className="fs-6 fw-bold ms-1 px-1 text-white rounded" style={{background: "#bd7c71"}}>$ {subtotal + user.Delivery.Cost  + 3.49}</p></h6>
                         </sapn>
                         <span className="d-flex w-100 mb-2" style={{order: "2"}}>
                             <button className="mt-2 p-1 w-25 me-auto btn btn-dark"  onClick={ e => show("showShippingOption")}>Back</button>
@@ -131,7 +132,7 @@ const Checkout = () => {
                     <Shipping />
                     <AddAddress />
                 </div>
-                <div className={`${showShippingOption ? null:'d-none'} mt-2 checkoutShippingOption`}>
+                <div className={`${showShippingOption ? null:'d-none'} mt-2 checkoutShippingOption row`}>
                     <Delivery />
                 </div>
                 <div className={`${showReview ? 'd-flex':'d-none'} flex-column checkoutSummary`}>
@@ -149,7 +150,7 @@ const Checkout = () => {
                         </div>
                         <sapn className="d-flex align-items-center w-100">
                             <h6 className="d-flex align-items-center">Items <p className="p-1 rounded fw-bold text-white px-2 ms-1" style={{background: "#4d5c46"}}>{itemTotal}</p> </h6>
-                            <h6 className="d-flex align-items-center ms-auto">Total <p className="fs-6 fw-bold ms-1 px-1 text-white rounded" style={{background: "#bd7c71"}}>$ {subtotal + 7.50 + 3.49}</p></h6>
+                            <h6 className="d-flex align-items-center ms-auto">Total <p className="fs-6 fw-bold ms-1 px-1 text-white rounded" style={{background: "#bd7c71"}}>$ {subtotal + user.Delivery ? user.Delivery.Cost:0.00 + 3.49}</p></h6>
                         </sapn>
                     </div>
                     {errorMsg.messages ? errorMsg.messages.map( (message, index) => {return <p key={index} className={`d-flex ${errorMsg.type === "payment" ? "mx-auto":null} align-items-center fs-6 mt-2 fw-bold mx-auto`}>{message} <i className={`fa-solid ${errorMsg.type === "success" ? "fa-circle-check text-success":"fa-circle-exclamation text-danger"} fa-beat fa-lg ms-1 `}></i></p>}):null}
