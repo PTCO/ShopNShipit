@@ -11,7 +11,7 @@ const Images = ({product}) => {
         <div id="productImagesCarousel" className="carousel slide mt-2">
             <span className="d-flex align-items-center">
                 <BackBtn text={"Results"} path={"/Home"}/>
-                <button type="button" className="productCartBtn btn btn-dark mb-1 ms-auto" style={{background: "#4d5c46", borderColor: "#4d5c46"}}  onClick={ e => {actions.navigate('/Home/Cart')}}><i  className="fa-solid fa-cart-shopping text-white me-1"></i> <b >Cart</b></button>
+                <button type="button" className="productCartBtn btn btn-dark ms-auto" style={{background: "#4d5c46", borderColor: "#4d5c46"}}  onClick={ e => {actions.navigate('/Home/Cart')}}><i  className="fa-solid fa-cart-shopping text-white me-1"></i> <b >Cart</b></button>
             </span>
             <div className="d-flex" id="productDetailsImages">
                 <div className="d-flex justify-content-center productDetailImageContainer">
