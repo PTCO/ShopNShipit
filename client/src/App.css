@@ -450,6 +450,10 @@ header button {
 
 }
 
+form {
+  margin: 0 auto !important;
+}
+
 .aboutPortrait {
   width: 4rem !important;
   height: 4rem !important;

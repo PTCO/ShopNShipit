@@ -48,14 +48,14 @@ const Input = ({input, formType}) => {
                         }
                         if(input.name === 'cvv' || input.name === 'cardnumber' || input.name === 'zip') {
                             if(CardType === "amex" ) {
-                                if(/^[0-9\b]+/.test(e.target.value) && e.target.value.length <= 15 || e.target.value === '') setData(e.target.value);
+                                if(/^[0-9\b]+$/.test(e.target.value) && e.target.value.length <= 15 || e.target.value === '') setData(e.target.value);
                             } else {
-                                if(/^[0-9\b]+/.test(e.target.value) && e.target.value.length <= input.limit || e.target.value === '') setData(e.target.value);
+                                if(/^[0-9\b]+$/.test(e.target.value) && e.target.value.length <= input.limit || e.target.value === '') setData(e.target.value);
                             }
                             return
                         }
                         if(input.type === "number"){
-                            if(/^[0-9\b]$/.test(e.target.value) && e.target.value <= 5 || e.target.value === '') setData(e.target.value);
+                            if(/^[0-9\b]+$/.test(e.target.value) && e.target.value <= 5 || e.target.value === '') setData(e.target.value);
                             return
                         } 
                         if(input.type === 'address') {
