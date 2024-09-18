@@ -34,12 +34,15 @@ export const SettingsProvider = (props) => {
         .catch( error => actions.handleError(error.response))
     }
 
-    const updateOrderStatus = async (id, status) => {
-        await axios.post(`${process.env.REACT_APP_BACKEND_URL}/Orders/Update`, {Order_ID: id, Status: status})
+    const updateOrderStatus = async (id) => {
+        await axios.post(`${process.env.REACT_APP_BACKEND_URL}/Orders/Update`, {Order_ID: id})
         .then( result => {
+            if(result.data === "Delivered") {
+                return 
+            }
             setOrderStatus({status: true, order: result.data})
             document.getElementById("portal").className = "null"
-            actions.accountNotifications("Order Update", "Order #", id, user.Email, status, "09/09/2024", '', '', '', '', '', '', order.Delivery.Window)
+            actions.accountNotifications("Order Update", "Order #", id, user.Email, result.data.Status, "09/09/2024", '', '', '', '', '', '', order.Delivery.Window)
         })
         .catch(error => actions.handleError(error.response))
     }

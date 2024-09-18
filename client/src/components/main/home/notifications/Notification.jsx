@@ -64,7 +64,7 @@ const Notification = () => {
             </>
         )
     }
-    if(orderStatus.status) {
+    if(orderStatus.order !== '') {
         return (
             <>
                 <span id="overlay"></span>

@@ -97,7 +97,7 @@ Router.post('/Checkout', asyncHandler(async(req, res)=>{
         ItemsCount: ItemsCount,
         SubTotal: SubTotal,
         Tax: process.env.TAX,
-        ShippingPrice: process.env.SHIPPING,
+        ShippingPrice: Delivery.Cost,
         Cart: cartItems,
         Delivery: Delivery
     });

@@ -12,21 +12,13 @@ const OrderDetails = () => {
 
     useEffect(()=>{
         settingsActions.getOneOrder(location.pathname.split("/")[5]);
-        if(order) {
-            setTimeout(() => {
-                settingsActions.updateOrderStatus(order.Order_ID, "Shipped");
-                setTimeout(() => {
-                    settingsActions.updateOrderStatus(order.Order_ID, "Delivered");
-                }, 60000);
-            }, 30000);
-        }
     }, [])
 
     if(order) {
         return (
             <>
-            <h2 className="d-flex  align-items-center border-bottom border-2 pb-1 my-2 pb-2 settingsTitle" >Order Details <p className="ms-3 fs-3 rounded p-1 text-white" style={{background: "#4d5c46"}}>{order.Order_ID}</p></h2>
-            <div className="mb-2">
+            <h2 className="d-flex  align-items-center border-bottom border-2 my-2 pb-2 settingsTitle" >Order Details <p className="ms-3 fs-3 rounded p-1 text-white" style={{background: "#4d5c46"}}>{order.Order_ID}</p></h2>
+            <div className="mb-2 d-flex flex-column h-100">
                 {items ? 
                 <div className="d-flex flex-column orderItemsList overflow-y-auto">
                     {order.Cart.map( product => {
@@ -87,7 +79,7 @@ const OrderDetails = () => {
                         <p className="d-flex flex-column  align-items-center fw-bold">Subtotal <b className="bg-dark  rounded px-1 text-white">$ {order.SubTotal}</b></p>
                         <p className="mx-2 d-flex flex-column  align-items-center fw-bold">Shipping <b className="bg-dark  rounded px-1 text-white">$ {order.ShippingPrice}</b></p>
                         <p className="d-flex flex-column  align-items-center fw-bold">Tax <b className="bg-dark  rounded px-1 text-white">$ {order.Tax}</b></p>
-                        <p className="mt-auto ms-auto p-1 fw-bold bg-dark rounded text-white">{order.Status}</p>
+                        <p className="d-flex align-items-center  fw-bold ms-auto"> Status <p className="ms-2 p-1 fw-bold bg-dark rounded text-white">{order.Status}</p></p>
                     </div>
                     <sapn className="d-flex align-items-center w-100">
                         <h6 className="d-flex align-items-center">Items <p className="p-1 rounded fw-bold text-white px-2 ms-1" style={{background: "#4d5c46"}}>{order.ItemsCount}</p> </h6>
@@ -99,7 +91,10 @@ const OrderDetails = () => {
                     </sapn>
                 </span>
             </div>
-            <BackBtn text={"Orders"} path={"/Home/Settings/Orders"}/>
+            <span className="d-flex align-items-center">
+                <BackBtn text={"Orders"} path={"/Home/Settings/Orders"}/>
+                <button className="btn btn-dark ms-2" onClick={ e => {settingsActions.updateOrderStatus(order.Order_ID); settingsActions.getOneOrder(location.pathname.split("/")[5])} } style={{background: "#4d5c46"}}>Refresh <i className="fa-solid fa-arrows-rotate"></i></button>
+            </span>
             </>
         )
     }
