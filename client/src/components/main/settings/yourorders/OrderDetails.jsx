@@ -18,7 +18,7 @@ const OrderDetails = () => {
         return (
             <>
             <h2 className="d-flex  align-items-center border-bottom border-2 my-2 pb-2 settingsTitle" >Order Details <p className="ms-3 fs-3 rounded p-1 text-white" style={{background: "#4d5c46"}}>{order.Order_ID}</p></h2>
-            <div className="mb-2 d-flex flex-column h-100">
+            <div className="mb-2 d-flex flex-column">
                 {items ? 
                 <div className="d-flex flex-column orderItemsList overflow-y-auto">
                     {order.Cart.map( product => {
