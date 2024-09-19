@@ -1,7 +1,6 @@
 const passport = require('passport');
 const googleStrategy = require('passport-google-oauth20');
 const twitterStrategy = require('passport-twitter');
-const cookie = require('js-cookie');
 require('dotenv').config();
 
 /* Sequelize */
