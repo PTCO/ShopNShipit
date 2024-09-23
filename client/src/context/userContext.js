@@ -110,7 +110,7 @@ export const UserProvider = (props) => {
     const userLogin = async (data) => {
         try {
             await axios.post(`${process.env.REACT_APP_BACKEND_URL}/Login`, data) // Data should be an object formated like: {Username: string, Password: string}
-            .then( result => {setUser(result.data.user); Cookie.set('usc', JSON.stringify(result.data.sess));  navigate(location.state ? location.state:'/Home'); Cookie.set('query', "");})
+            .then( result => {setUser(result.data.user); Cookie.set('usc', JSON.stringify(result.data.sess) , {secure: true, sameSite: 'Strict', expires: 7 * 24 * 60 * 60 * 1000});  navigate(location.state ? location.state:'/Home'); Cookie.set('query', "");})
             .catch( error => handleError(error.response))
         } catch (error) {
             handleError(error.response);
